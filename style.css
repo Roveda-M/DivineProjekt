@@ -1,0 +1,145 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+}
+
+/* Trupi i faqes */
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+
+header {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+
+header.hide {
+  transform: translateY(-100%);
+}
+
+/* LOGO majtas */
+.logo {
+  order: 1;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.left-section {
+  order: 2;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  font-size: 16px;
+  color: #333;
+  gap: 20px;
+}
+
+
+.right-section {
+  order: 3;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.right-section a {
+  color: #333;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.right-section a:hover {
+  background: #eaeaea;
+  border-radius: 6px;
+  color: #000;
+}
+
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 20px;
+  margin-top: auto; /* Kjo bën që footeri të shkojë gjithmonë në fund të faqes */
+}
+
+.main-footer {
+  background-color: #111;
+  color: #eee;
+  padding: 30px 20px 15px;
+}
+
+.footer-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.footer-column {
+  flex: 1 1 220px;
+  margin: 10px;
+}
+
+.footer-column h3, .footer-column h4 {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.footer-column p, .footer-column a {
+  color: #bbb;
+  font-size: 14px;
+  line-height: 1.6;
+  text-decoration: none;
+}
+
+.footer-column a:hover {
+  color: #f06292;
+}
+
+.footer-column ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-column ul li {
+  margin-bottom: 6px;
+}
+
+.socials a {
+  display: inline-block;
+  margin-right: 12px;
+  color: #bbb;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 12px;
+}
+
+.footer-bottom {
+  text-align: center;
+  border-top: 1px solid #333;
+  margin-top: 20px;
+  padding-top: 10px;
+  font-size: 12px;
+  color: #777;
+}
