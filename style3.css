@@ -1,0 +1,165 @@
+.product-title {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.product-title h2 {
+  font-size: 30px;
+  color: #4f3b3b;
+  background: linear-gradient(45deg, #ff6f61,); 
+  -webkit-background-clip: text; 
+  background-clip: text;
+  padding: 10px 20px;
+  border-radius: 10px; 
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Hije për tekst */
+  letter-spacing: 2px; 
+  transition: all 0.3s ease;
+}
+
+.product-title h2:hover {
+  text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4); /* Hije më të theksuar kur është mbi të */
+}
+
+
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 5%; 
+}
+
+
+.product-card {
+  flex: 1 1 calc(33.33% - 10px);
+  box-sizing: border-box;
+  border-radius: 10px;
+  padding: 15px;
+  display: flex; 
+  flex-direction: column; /* Organizimi vertikal i elementeve */
+  align-items: center; 
+  justify-content: flex-start; /* Siguron që përmbajtja të fillojë nga lart */
+  height: 400px; 
+  text-align: center;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  font-size: 14px;
+  background: linear-gradient(135deg, #d6d8dbdc, #f5f5f5);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card img {
+  max-width: 100%;
+  max-height: 220px;
+  object-fit: contain; 
+  margin-bottom: 12px; /* Hapësirë mes imazhit dhe tekstit */
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.product-card h2 {
+  font-size: 16px;
+  color: #333;
+  margin: 8px 0;
+  margin-top: auto; /* Shtyn tekstin poshtë nëse ka hapësirë */
+}
+
+.product-card p {
+  font-size: 16px;
+  color: #666;
+  margin: 5px 0;
+}
+
+.product-card button {
+  background: linear-gradient(135deg,  #595562);
+  color: white;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  margin-top: auto; /* E shtyn butonin drejt fundit të kartës */
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.product-card:hover {
+  transform: scale(1.03); /* Zmadhim në hover */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+}
+
+.product-card:hover img {
+  transform: scale(1.1); /* Zmadhim i imazhit në hover */
+}
+
+.product-card button:hover {
+  background: linear-gradient(135deg,  #9a5353);
+  transform: translateY(-3px); /* Butoni ngrihet lehtë në hover */
+}
+
+
+
+
+
+
+
+ /* Responzive */
+
+@media (max-width: 768px) {
+  .product-card {
+    flex: 1 1 calc(50% - 10px);
+    height: 350px; /* Redukton lartësinë për ekranë më të vegjël */
+  }
+}
+
+@media (max-width: 480px) {
+  .product-card {
+    flex: 1 1 100%; /* Përshtatje për ekranë të vegjël */
+    height: auto; /* Lë lartësinë dinamike */
+  }
+}
+#kontenti {
+     
+display: flex;
+ flex-direction: column;
+ justify-content: center;
+align-items: center;
+font-family: 'Segoe UI light', Tahoma; 
+width: 720px; /* 10% më i vogël se 800px */
+ margin: 50px auto 100px auto; 
+ background: linear-gradient(135deg, #d6d8dbdc, #f5f5f5);
+ padding: 30px; 
+border-radius: 12px;
+ box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+
+ }
+
+ #kontenti img {
+ max-width: 400px;
+ height: 220px; 
+ object-fit: contain; 
+border-radius: 10px;
+ transition: transform 0.3s ease;
+ }
+ 
+ #kontenti img:hover { 
+transform: scale(1.05); /* efekt i butë në hover */ } 
+ 
+button {
+ background: linear-gradient(135deg, #595562, #4f4a60);
+  color: white;
+ padding: 12px 22px; /* më i madh për të përputhur slider-in */;
+ border: none;
+ border-radius: 6px;
+ cursor: pointer;
+ font-size: 16pt; /* më i dukshëm */ 
+ margin-top: 20px;
+ transition: background 0.3s ease, transform 0.3s ease; 
+}
+ 
+ button:hover { 
+background: linear-gradient(135deg, #9a5353, #7a3f3f); 
+transform: translateY(-3px); }
+
+#kontenti h2 {
+ font-size: 55px; /* më i madh */
+  font-weight: bold; /* bold */ }
