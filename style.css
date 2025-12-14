@@ -3,17 +3,17 @@
   padding: 0;
   box-sizing: border-box;
   text-decoration: none;
+  
 }
 
-/* Trupi i faqes */
+/* Font dhe sfond */
 body {
-  height: 100vh;
+  height: 100vh; /* Siguron që trupi i faqes të mbulojë tërë ekranin */
   margin: 0;
   display: flex;
   flex-direction: column;
 }
-
-
+/* Header i përgjithshëm me transparencë dhe blur */
 header {
   width: 100%;
   padding: 20px 40px;
@@ -23,14 +23,14 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.4); /* transparencë */
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
-  transition: transform 0.3s ease;
+  transition: transform 0.3s ease; /* animimi për zhdukje/shfaqje */
 }
 
-
+/* Kur header ka klasën 'hide' - zhduket nga pamja */
 header.hide {
   transform: translateY(-100%);
 }
@@ -43,17 +43,78 @@ header.hide {
   color: #333;
 }
 
+/* CATEGORIES në mes */
 .left-section {
   order: 2;
   display: flex;
   justify-content: center;
   flex-grow: 1;
+}
+
+/* DROPDOWN modern */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-btn {
+  background: linear-gradient(135deg, #f0f0f0, #ffffff);
+  border: 2px solid #ccc;
+  padding: 10px 20px;
   font-size: 16px;
+  border-radius: 30px;
+  cursor: pointer;
   color: #333;
-  gap: 20px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-btn::after {
+  content: "▼";
+  font-size: 12px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-btn::after {
+  transform: rotate(180deg);
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 110%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #fff;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+  min-width: 180px;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease;
 }
 
 
+
+.dropdown-content a {
+  display: block;
+  padding: 12px 20px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.dropdown-content a:hover {
+  background: #f9f9f9;
+  color: #000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* MENUJA djathtas */
 .right-section {
   order: 3;
   display: flex;
@@ -62,6 +123,7 @@ header.hide {
 }
 
 .right-section a {
+  text-decoration: none;
   color: #333;
   font-size: 16px;
   padding: 8px 12px;
