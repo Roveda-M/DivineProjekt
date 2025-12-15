@@ -1,3 +1,4 @@
+/* Product Title */
 .product-title {
   text-align: center;
   margin-top: 100px;
@@ -6,40 +7,39 @@
 .product-title h2 {
   font-size: 30px;
   color: #4f3b3b;
-  background: linear-gradient(45deg, #ff6f61,); 
-  -webkit-background-clip: text; 
+  background: linear-gradient(45deg, #ff6f61);
+  -webkit-background-clip: text;
   background-clip: text;
   padding: 10px 20px;
-  border-radius: 10px; 
-  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2); /* Hije për tekst */
-  letter-spacing: 2px; 
+  border-radius: 10px;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: 2px;
   transition: all 0.3s ease;
 }
 
 .product-title h2:hover {
-  text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4); /* Hije më të theksuar kur është mbi të */
+  text-shadow: 4px 4px 15px rgba(0, 0, 0, 0.4);
 }
 
-
+/* Product Container */
 .product-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 15px;
-  padding: 5%; 
+  padding: 5%;
 }
-
 
 .product-card {
   flex: 1 1 calc(33.33% - 10px);
   box-sizing: border-box;
   border-radius: 10px;
   padding: 15px;
-  display: flex; 
-  flex-direction: column; /* Organizimi vertikal i elementeve */
-  align-items: center; 
-  justify-content: flex-start; /* Siguron që përmbajtja të fillojë nga lart */
-  height: 400px; 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  height: 400px;
   text-align: center;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   font-size: 14px;
@@ -50,8 +50,8 @@
 .product-card img {
   max-width: 100%;
   max-height: 220px;
-  object-fit: contain; 
-  margin-bottom: 12px; /* Hapësirë mes imazhit dhe tekstit */
+  object-fit: contain;
+  margin-bottom: 12px;
   border-radius: 8px;
   transition: transform 0.3s ease;
 }
@@ -60,7 +60,7 @@
   font-size: 16px;
   color: #333;
   margin: 8px 0;
-  margin-top: auto; /* Shtyn tekstin poshtë nëse ka hapësirë */
+  margin-top: auto;
 }
 
 .product-card p {
@@ -70,96 +70,396 @@
 }
 
 .product-card button {
-  background: linear-gradient(135deg,  #595562);
+  background: linear-gradient(135deg, #595562);
   color: white;
   padding: 8px 12px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
   font-size: 14px;
-  margin-top: auto; /* E shtyn butonin drejt fundit të kartës */
+  margin-top: auto;
   transition: background 0.3s ease, transform 0.3s ease;
 }
 
 .product-card:hover {
-  transform: scale(1.03); /* Zmadhim në hover */
+  transform: scale(1.03);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
   background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
 }
 
 .product-card:hover img {
-  transform: scale(1.1); /* Zmadhim i imazhit në hover */
+  transform: scale(1.1);
 }
 
 .product-card button:hover {
-  background: linear-gradient(135deg,  #9a5353);
-  transform: translateY(-3px); /* Butoni ngrihet lehtë në hover */
+  background: linear-gradient(135deg, #9a5353);
+  transform: translateY(-3px);
 }
 
+/* Kontenti / Slider */
+#kontenti {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Segoe UI light", Tahoma;
+  width: 720px;
+  margin: 50px auto 100px auto;
+  background: linear-gradient(135deg, #d6d8dbdc, #f5f5f5);
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+#slideHeader {
+  border-radius: 20px;
+}
+#kapelaH1 {
+  font-family: "Times New Roman", Times, serif;
+}
 
+#kontenti img {
+  max-width: 400px;
+  height: 220px;
+  object-fit: contain;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
 
+#kontenti img:hover {
+  transform: scale(1.05);
+}
 
+#kontenti h2 {
+  font-size: 55px;
+  font-weight: bold;
+}
 
+button {
+  background: linear-gradient(135deg, #595562, #4f4a60);
+  color: white;
+  padding: 12px 22px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16pt;
+  margin-top: 20px;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
 
+button:hover {
+  background: linear-gradient(135deg, #9a5353, #7a3f3f);
+  transform: translateY(-3px);
+}
 
- /* Responzive */
+/* Filter / Dropdown Section */
+.filter-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 30px auto 0;
+  padding: 0 5%;
+  display: flex;
+  justify-content: flex-start;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.cart-counter {
+  position: absolute;
+  top: 20px;
+  right: 96px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+.account-icon {
+  font-size: 24px;
+  color: #000;
+  transition: 0.3s;
+}
+
+.account-icon:hover {
+  color: #2e2e2e;
+}
+.dropdown-btn {
+  background: #000;
+  color: #fff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dropdown-btn:hover {
+  background: #333;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-btn::after {
+  content: "\f107";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.dropdown:hover .dropdown-btn::after {
+  transform: rotate(180deg);
+}
+
+/* Dropdown Content */
+.dropdown-content {
+  position: absolute;
+  top: 100%; /* ngjitet direkt poshtë butonit */
+  left: 0;
+  width: 100%; /* të njëjtën gjerësi si butoni */
+  background: #fff;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  overflow: hidden;
+  z-index: 1000;
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.dropdown-content.show {
+  opacity: 1;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.dropdown-content a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  color: #333;
+  text-decoration: none;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.dropdown-content a:last-child {
+  border-bottom: none;
+}
+
+.dropdown-content a:hover {
+  background: #000;
+  color: #fff;
+  padding-left: 28px;
+  transform: translateX(5px);
+}
+
+.dropdown-content a[data-filter="femra"]:hover {
+  background: linear-gradient(135deg, #ff6b9d, #ff8fab);
+  color: #fff;
+}
+
+.dropdown-content a[data-filter="man"]:hover {
+  background: linear-gradient(135deg, #4a90e2, #5ba3f5);
+  color: #fff;
+}
+
+.dropdown-content a[data-filter="all"]:hover {
+  background: linear-gradient(135deg, #333, #555);
+  color: #fff;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 1024px) {
+  .product-container {
+    padding: 4%;
+    gap: 12px;
+  }
+  .product-card {
+    flex: 1 1 calc(33.33% - 10px);
+    height: 380px;
+  }
+  #kontenti {
+    width: 90%;
+    max-width: 650px;
+    margin: 40px auto 80px auto;
+    padding: 25px;
+  }
+  #kontenti img {
+    max-width: 350px;
+    height: 200px;
+  }
+  #kontenti h2 {
+    font-size: 45px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 15pt;
+  }
+  .filter-section {
+    padding: 0 4%;
+    gap: 12px;
+  }
+}
 
 @media (max-width: 768px) {
+  .product-container {
+    padding: 3%;
+    gap: 10px;
+  }
+  .cart-counter {
+    position: absolute;
+    right: 66px;
+    top: 24px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+  }
   .product-card {
     flex: 1 1 calc(50% - 10px);
-    height: 350px; /* Redukton lartësinë për ekranë më të vegjël */
+    height: 350px;
+    padding: 12px;
+  }
+  .product-card img {
+    max-height: 180px;
+  }
+  .product-card h2 {
+    font-size: 14px;
+  }
+  .product-card p {
+    font-size: 14px;
+  }
+  .product-card button {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+  #kontenti {
+    width: 95%;
+    margin: 30px auto 60px auto;
+    padding: 20px;
+  }
+  #kontenti img {
+    max-width: 100%;
+    height: 180px;
+  }
+  #kontenti h2 {
+    font-size: 35px;
+  }
+  button {
+    padding: 10px 18px;
+    font-size: 14pt;
+    margin-top: 15px;
+  }
+  .filter-section {
+    padding: 0 3%;
+    margin: 20px auto 0;
+    gap: 10px;
+  }
+  .dropdown {
+    flex: 1 1 calc(50% - 5px);
+    min-width: 150px;
+  }
+  .dropdown-btn {
+    padding: 10px 20px;
+    font-size: 14px;
+    width: 100%;
+    justify-content: center;
+  }
+  .dropdown-content {
+    min-width: 100%;
+    left: 0;
+    right: 0;
   }
 }
 
 @media (max-width: 480px) {
+  .product-container {
+    padding: 2%;
+    gap: 8px;
+  }
   .product-card {
-    flex: 1 1 100%; /* Përshtatje për ekranë të vegjël */
-    height: auto; /* Lë lartësinë dinamike */
+    flex: 1 1 100%;
+    height: auto;
+    min-height: 320px;
+    padding: 10px;
+  }
+  .product-card img {
+    max-height: 160px;
+    margin-bottom: 10px;
+  }
+  .product-card h2 {
+    font-size: 13px;
+    margin: 6px 0;
+  }
+  .product-card p {
+    font-size: 13px;
+    margin: 4px 0;
+  }
+  .product-card button {
+    padding: 6px 8px;
+    font-size: 11px;
+    margin-top: 8px;
+  }
+  #kontenti {
+    width: 95%;
+    margin: 25px auto 50px auto;
+    padding: 15px;
+  }
+  #kontenti img {
+    max-width: 100%;
+    height: 150px;
+  }
+  #kontenti h2 {
+    font-size: 28px;
+  }
+  button {
+    padding: 8px 16px;
+    font-size: 12pt;
+    margin-top: 12px;
+  }
+  .filter-section {
+    padding: 0 2%;
+    margin: 15px auto 0;
+    gap: 8px;
+    flex-direction: column;
+  }
+  .dropdown {
+    width: 100%;
+    flex: 1 1 100%;
+  }
+  .dropdown-btn {
+    padding: 8px 16px;
+    font-size: 13px;
+    width: 100%;
+  }
+  .dropdown-content {
+    min-width: 100%;
+    left: 0;
+    right: 0;
   }
 }
-#kontenti {
-     
-display: flex;
- flex-direction: column;
- justify-content: center;
-align-items: center;
-font-family: 'Segoe UI light', Tahoma; 
-width: 720px; /* 10% më i vogël se 800px */
- margin: 50px auto 100px auto; 
- background: linear-gradient(135deg, #d6d8dbdc, #f5f5f5);
- padding: 30px; 
-border-radius: 12px;
- box-shadow: 0 6px 12px rgba(0,0,0,0.2);
-
- }
-
- #kontenti img {
- max-width: 400px;
- height: 220px; 
- object-fit: contain; 
-border-radius: 10px;
- transition: transform 0.3s ease;
- }
- 
- #kontenti img:hover { 
-transform: scale(1.05); /* efekt i butë në hover */ } 
- 
-button {
- background: linear-gradient(135deg, #595562, #4f4a60);
-  color: white;
- padding: 12px 22px; /* më i madh për të përputhur slider-in */;
- border: none;
- border-radius: 6px;
- cursor: pointer;
- font-size: 16pt; /* më i dukshëm */ 
- margin-top: 20px;
- transition: background 0.3s ease, transform 0.3s ease; 
-}
- 
- button:hover { 
-background: linear-gradient(135deg, #9a5353, #7a3f3f); 
-transform: translateY(-3px); }
-
-#kontenti h2 {
- font-size: 55px; /* më i madh */
-  font-weight: bold; /* bold */ }

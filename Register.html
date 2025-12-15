@@ -3,8 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - DIVINE.</title>
-    <link rel="stylesheet" href="login.css" />
+    <title>Register - DIVINE.</title>
+    <link rel="stylesheet" href="register.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
@@ -20,6 +20,7 @@
           color: black;
           text-decoration: none;
         "
+        class="logo"
         >DIVINE.</a
       >
       <button class="hamburger-menu" aria-label="Toggle menu">
@@ -36,8 +37,18 @@
     </header>
 
     <div class="login-container">
-      <h2>Login to Your Account</h2>
-      <form action="login_process.html" method="POST">
+      <h2>Create Your Account</h2>
+      <form action="register_process.html" method="POST">
+        <div class="form-group">
+          <label for="fullname">Full Name</label>
+          <input
+            type="text"
+            id="fullname"
+            name="fullname"
+            placeholder="Roveda Marevci"
+            required
+          />
+        </div>
         <div class="form-group">
           <label for="email">Email</label>
           <input
@@ -45,6 +56,16 @@
             id="email"
             name="email"
             placeholder="you@example.com"
+            required
+          />
+        </div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input
+            type="text"
+            id="username"
+            name="username"
+            placeholder="Username"
             required
           />
         </div>
@@ -58,21 +79,31 @@
             required
           />
         </div>
-        <button type="submit">Login</button>
-        <p>Don't have an account? <a href="register.html">Sign up</a></p>
+        <div class="form-group">
+          <label for="confirm-password">Confirm Password</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="Confirm password"
+            required
+          />
+        </div>
+        <button type="submit">Register</button>
+        <p>Already have an account? <a href="login.html">Login</a></p>
       </form>
 
       <div class="divider"><span>OR</span></div>
 
       <div class="social-login">
         <button class="apple">
-          <i class="fab fa-apple"></i> Login with Apple
+          <i class="fab fa-apple"></i> Register with Apple
         </button>
         <button class="google">
-          <i class="fab fa-google"></i> Login with Google
+          <i class="fab fa-google"></i> Register with Google
         </button>
         <button class="microsoft">
-          <i class="fab fa-microsoft"></i> Login with Microsoft
+          <i class="fab fa-microsoft"></i> Register with Microsoft
         </button>
       </div>
     </div>
@@ -110,28 +141,28 @@
 
     <script>
       // Hamburger Menu Toggle
-      const hamburgerMenu = document.querySelector('.hamburger-menu');
-      const navLinks = document.querySelector('.nav-links');
-      const hamburgerIcon = hamburgerMenu.querySelector('i');
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const navLinks = document.querySelector(".nav-links");
+      const hamburgerIcon = hamburgerMenu.querySelector("i");
 
-      hamburgerMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        if (navLinks.classList.contains('active')) {
-          hamburgerIcon.classList.remove('fa-bars');
-          hamburgerIcon.classList.add('fa-times');
+      hamburgerMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        if (navLinks.classList.contains("active")) {
+          hamburgerIcon.classList.remove("fa-bars");
+          hamburgerIcon.classList.add("fa-times");
         } else {
-          hamburgerIcon.classList.remove('fa-times');
-          hamburgerIcon.classList.add('fa-bars');
+          hamburgerIcon.classList.remove("fa-times");
+          hamburgerIcon.classList.add("fa-bars");
         }
       });
 
       // Close menu when clicking on a link
-      const navLinksItems = document.querySelectorAll('.nav-links a');
-      navLinksItems.forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-          hamburgerIcon.classList.remove('fa-times');
-          hamburgerIcon.classList.add('fa-bars');
+      const navLinksItems = document.querySelectorAll(".nav-links a");
+      navLinksItems.forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          hamburgerIcon.classList.remove("fa-times");
+          hamburgerIcon.classList.add("fa-bars");
         });
       });
     </script>

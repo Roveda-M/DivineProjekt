@@ -1,220 +1,286 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>DIVINE.</title>
-  <link rel="stylesheet" href="style.css">
-   <link rel="stylesheet" href="style3.css">
-  
-</head>
-<body>
-  <header>
-    <div class="left-section">
-    <div class="dropdown">
-       <button class="dropdown-btn">Categories</button>
-        <div class="dropdown-content">
-        <a href="#" data-filter="femra">Femra</a>
-        <a href="#" data-filter="man">Meshkuj</a>
-        <a href="#" data-filter="all">Të gjitha</a>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIVINE.</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style3.css" />
+  </head>
+  <body>
+    <header>
+      <a
+        href="Index.html"
+        style="
+          font-size: 24px;
+          font-weight: bold;
+          color: black;
+          text-decoration: none;
+        "
+        >DIVINE.</a
+      >
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="right-section">
+        <div class="nav-links">
+          <a href="Index.html">Home</a>
+          <a href="Aboutus.html">About Us</a>
+          <a href="Shop.html">Shop</a>
+          <a href="Contacts.html">Contact</a>
         </div>
-    </div>
-    </div>
+        <div class="nav-icons">
+          <a href="Cart.html" class="cart-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-counter">6</span>
+            <a href="Login.html" class="account-icon">
+              <i class="fa-regular fa-user"></i>
+            </a>
+          </a>
+        </div>
+      </nav>
+    </header>
 
-     <a href="index.html" style="font-size: 24px; font-weight: bold; color: black; text-decoration: none;">DIVINE.</a>
-  <nav class="right-section">
-    <a href="index.html">Home</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="shop.html">Shop</a>
-    <a href="contact.html">Contact</a>
-     <a href="shop.html" id="cartIcon">
-       🛍️ 
-       <span class="cart-counter"></span> </a>
-  </nav>
-  
-
-</header>
-
-<div class="product-container">
-<div class="product-card" data-category="femra">
-  <img src="imgF/p1.png" alt="Foto Femra">
-  <h2>Crop Tank T-shirt</h2>
-  <p>€9.99</p>
-  <div class="product-info"><p>F</p></div>
-  <button>Shto në Shportë</button>
-</div>
-<div class="product-card" data-category="femra">
-  <img src="imgF/p2.png" alt="Foto Femra">
-  <h2>Zip-up Hoodie</h2>
-  <p>€14.99</p>
-  <div class="product-info"><p>F</p></div>
-  <button>Shto në Shportë</button>
-</div>
-
-<div class="product-card" data-category="femra">
-  <img src="imgF/p3.png" alt="Foto Femra">
-  <h2>Crop T-shirt</h2>
-  <p>€9.99</p>
-  <div class="product-info"><p>F</p></div>
-  <button>Shto në Shportë</button>
-</div>
-
-<div class="product-card" data-category="femra">
-  <img src="imgF/p4.png" alt="Foto Femra">
-  <h2>Jacket</h2>
-  <p>€19.99</p>
-  <div class="product-info"><p>F</p></div>
-  <button>Shto në Shportë</button>
-</div>
-
-<div class="product-card" data-category="femra">
-  <img src="imgF/p5.png" alt="Foto Femra">
-  <h2>T-shirt</h2>
-  <p>€12.99</p>
-  <div class="product-info"><p>F</p></div>
-  <button>Shto në Shportë</button>
-</div>
-
-<div class="product-card" data-category="femra">
-  <img src="imgF/p6.png" alt="Foto Femra">
-  <h2>Blouse</h2>
-  <p>€12.99</p>
-  <div class="product-info"><p>F</p></div>
-  <button>Shto në Shportë</button>
-</div>
-
-
-
-<div class="product-card" data-category="man">
-  <img src="imgM/p7.png" alt="Foto Meshkuj">
-  <h2>T-shirt</h2>
-  <p>€17.99</p>
-  <div class="product-info"><p>M</p></div>
-  <button>Shto në Shportë</button>
-</div>
-
-<div class="product-card" data-category="man">
-  <img src="imgM/p8.png" alt="Foto Meshkuj">
-  <h2>T-shirt</h2>
-  <p>€14.99</p>
-  <div class="product-info"><p>M</p></div>
-  <button>Shto në Shportë</button>
-</div>
-
-<div class="product-card" data-category="man">
-  <img src="imgM/p9.png" alt="Foto Meshkuj">
-  <h2>Zip-up Hoodie</h2>
-  <p>€19.99</p>
-  <div class="product-info"><p>M</p></div>
-  <button>Shto në Shportë</button>
-</div>
-
-<div class="product-card" data-category="man">
-  <img src="imgM/p10.png" alt="Foto Meshkuj">
-  <h2>Jacket</h2>
-  <p>€22.99</p>
-  <div class="product-info"><p>M</p></div>
-  <button>Shto në Shportë</button>
-</div>
-
-<div class="product-card" data-category="man">
-  <img src="imgM/p11.png" alt="Foto Meshkuj">
-  <h2>Hoodie</h2>
-  <p>€19.99</p>
-  <div class="product-info"><p>M</p></div>
-  <button>Shto në Shportë</button>
-</div>
-
-<div class="product-card" data-category="man">
-  <img src="imgM/p12.png" alt="Foto Meshkuj">
-  <h2>T-shirt</h2>
-  <p>€14.99</p>
-  <div class="product-info"><p>M</p></div>
-  <button>Shto në Shportë</button>
-</div>
-</div>
-
-<!--Slider-->
-<div id="kontenti">
-        <header>
-            <h2>  Kapelat:</h2>
-            <img id="slideshow" src="kapuqat/kapela1.png" alt="Kapuqi 1">
-        </header>
-        <button onclick="ndrroImg()">Next</button>
+    <div class="filter-section">
+      <div class="dropdown">
+        <button class="dropdown-btn">
+          <i class="fa-solid fa-list"></i>
+          Categories
+        </button>
+        <div class="dropdown-content">
+          <a href="#" data-filter="femra">
+            <i class="fa-solid fa-venus"></i>
+            Femra
+          </a>
+          <a href="#" data-filter="man">
+            <i class="fa-solid fa-mars"></i>
+            Meshkuj
+          </a>
+          <a href="#" data-filter="all">
+            <i class="fa-solid fa-th"></i>
+            Të gjitha
+          </a>
+        </div>
+      </div>
     </div>
 
-<footer class="main-footer">
-          <div class="footer-content">
-            <div class="footer-column">
-              <h3>DIVINE.</h3>
-              <p>Rroba me stil për Femra,
-                 Meshkuj. Blej thjesht.
-                  Vesh me klas.</p>
-              </div>
-              <div class="footer-column">
-                <h4>Menu</h4>
-                <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="aboutus.html">About us</a></li>
-                  <li><a href="shop.html">Shop</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                </ul>
-              </div>
-              <div class="footer-column">
-                <h4>Kontakti</h4>
-                <p><strong>Email:</strong>Divine@gmail.com</p>
-                 <p><strong>Tel:</strong>+383 00 000 000</p>
-                 <div class="socials">
-                  <a href="https://www.instagram.com/">Instagram</a>
-                  <a href="https://www.facebook.com/">Facebook</a>
-                  <a href="https://www.tiktok.com/">TikTok</a>
-                 </div>
-              </div>
-            </div>
-            <div class="footer-bottom">
-            <p>&copy; 2025 DIVINE. Të gjitha të drejtat e rezervuara.</p>
-           </div>
-          
-        </footer>
-       
-<script>
-document.addEventListener("DOMContentLoaded", () => {
-  const filterLinks = document.querySelectorAll('[data-filter]');
-  const products = document.querySelectorAll('.product-card');
+    <div class="product-container">
+      <div class="product-card" data-category="femra">
+        <img src="imgF/p1.png" alt="Foto Femra" />
+        <h2>Crop Tank T-shirt</h2>
+        <p>€9.99</p>
+        <div class="product-info"><p>F</p></div>
+        <button>Shto në Shportë</button>
+      </div>
+      <div class="product-card" data-category="femra">
+        <img src="imgF/p2.png" alt="Foto Femra" />
+        <h2>Zip-up Hoodie</h2>
+        <p>€14.99</p>
+        <div class="product-info"><p>F</p></div>
+        <button>Shto në Shportë</button>
+      </div>
 
-  filterLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
-      e.preventDefault();
-      const selectedCategory = link.getAttribute('data-filter');
+      <div class="product-card" data-category="femra">
+        <img src="imgF/p3.png" alt="Foto Femra" />
+        <h2>Crop T-shirt</h2>
+        <p>€9.99</p>
+        <div class="product-info"><p>F</p></div>
+        <button>Shto në Shportë</button>
+      </div>
 
-      products.forEach(product => {
-        const productCategory = product.getAttribute('data-category');
+      <div class="product-card" data-category="femra">
+        <img src="imgF/p4.png" alt="Foto Femra" />
+        <h2>Jacket</h2>
+        <p>€19.99</p>
+        <div class="product-info"><p>F</p></div>
+        <button>Shto në Shportë</button>
+      </div>
 
-        // Ruaj display:flex për të mos prishur layout-in
-        product.style.display = (selectedCategory === 'all' || productCategory === selectedCategory) ? 'flex' : 'none';
+      <div class="product-card" data-category="femra">
+        <img src="imgF/p5.png" alt="Foto Femra" />
+        <h2>T-shirt</h2>
+        <p>€12.99</p>
+        <div class="product-info"><p>F</p></div>
+        <button>Shto në Shportë</button>
+      </div>
+
+      <div class="product-card" data-category="femra">
+        <img src="imgF/p6.png" alt="Foto Femra" />
+        <h2>Blouse</h2>
+        <p>€12.99</p>
+        <div class="product-info"><p>F</p></div>
+        <button>Shto në Shportë</button>
+      </div>
+
+      <div class="product-card" data-category="man">
+        <img src="imgM/p7.png" alt="Foto Meshkuj" />
+        <h2>T-shirt</h2>
+        <p>€17.99</p>
+        <div class="product-info"><p>M</p></div>
+        <button>Shto në Shportë</button>
+      </div>
+
+      <div class="product-card" data-category="man">
+        <img src="imgM/p8.png" alt="Foto Meshkuj" />
+        <h2>T-shirt</h2>
+        <p>€14.99</p>
+        <div class="product-info"><p>M</p></div>
+        <button>Shto në Shportë</button>
+      </div>
+
+      <div class="product-card" data-category="man">
+        <img src="imgM/p9.png" alt="Foto Meshkuj" />
+        <h2>Zip-up Hoodie</h2>
+        <p>€19.99</p>
+        <div class="product-info"><p>M</p></div>
+        <button>Shto në Shportë</button>
+      </div>
+
+      <div class="product-card" data-category="man">
+        <img src="imgM/p10.png" alt="Foto Meshkuj" />
+        <h2>Jacket</h2>
+        <p>€22.99</p>
+        <div class="product-info"><p>M</p></div>
+        <button>Shto në Shportë</button>
+      </div>
+
+      <div class="product-card" data-category="man">
+        <img src="imgM/p11.png" alt="Foto Meshkuj" />
+        <h2>Hoodie</h2>
+        <p>€19.99</p>
+        <div class="product-info"><p>M</p></div>
+        <button>Shto në Shportë</button>
+      </div>
+
+      <div class="product-card" data-category="man">
+        <img src="imgM/p12.png" alt="Foto Meshkuj" />
+        <h2>T-shirt</h2>
+        <p>€14.99</p>
+        <div class="product-info"><p>M</p></div>
+        <button>Shto në Shportë</button>
+      </div>
+    </div>
+
+    <!--Slider-->
+    <div id="kontenti">
+      <header id="slideHeader">
+        <h2 id="kapelaH1">Hats</h2>
+        <img id="slideshow" src="kapuqat/kapela1.png" alt="Kapuqi 1" />
+      </header>
+      <button onclick="ndrroImg()">Next</button>
+    </div>
+
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>DIVINE.</h3>
+          <p>Rroba me stil për Femra, Meshkuj. Blej thjesht. Vesh me klas.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Kontakti</h4>
+          <p><strong>Email:</strong>Divine@gmail.com</p>
+          <p><strong>Tel:</strong>+383 00 000 000</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.tiktok.com/">TikTok</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 DIVINE. Të gjitha të drejtat e rezervuara.</p>
+      </div>
+    </footer>
+
+    <script>
+      const dropdownBtn = document.querySelector(".dropdown-btn");
+      const dropdownContent = document.querySelector(".dropdown-content");
+
+      dropdownBtn.addEventListener("click", () => {
+        dropdownContent.classList.toggle("show");
       });
-    });
-  });
-});
-const imazhet = [
-            "kapuqat/kapela1.png",
-            "kapuqat/kapela2.png",
-            "kapuqat/kapela3.png",
-            "kapuqat/kapela4.png",
-            "kapuqat/kapela5.png",
-            "kapuqat/kapela6.png"
-        ];
 
-        let currentIndex = 0;
+      const filterLinks = document.querySelectorAll(".dropdown-content a");
+      const productCards = document.querySelectorAll(".product-card");
 
-        function ndrroImg() {
-            currentIndex++; // kalon tek imazhi tjetër
-            if (currentIndex >= imazhet.length) {
-                currentIndex = 0; // rikthehet te i pari
+      filterLinks.forEach((link) => {
+        link.addEventListener("click", (e) => {
+          e.preventDefault();
+          const filter = link.dataset.filter;
+
+          filterLinks.forEach((l) => l.classList.remove("active"));
+          link.classList.add("active");
+
+          productCards.forEach((card) => {
+            if (filter === "all" || card.dataset.category === filter) {
+              card.style.display = "flex";
+            } else {
+              card.style.display = "none";
             }
-            document.getElementById("slideshow").src = imazhet[currentIndex];
+          });
+
+          dropdownContent.classList.remove("show");
+        });
+      });
+
+      document.addEventListener("click", (e) => {
+        if (
+          !dropdownBtn.contains(e.target) &&
+          !dropdownContent.contains(e.target)
+        ) {
+          dropdownContent.classList.remove("show");
         }
+      });
 
-</script>
-</body>
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const navLinks = document.querySelector(".nav-links");
+      const hamburgerIcon = hamburgerMenu?.querySelector("i");
+
+      if (hamburgerMenu && navLinks && hamburgerIcon) {
+        hamburgerMenu.addEventListener("click", () => {
+          navLinks.classList.toggle("active");
+          hamburgerIcon.classList.toggle("fa-bars");
+          hamburgerIcon.classList.toggle("fa-times");
+        });
+
+        document.querySelectorAll(".nav-links a").forEach((link) => {
+          link.addEventListener("click", () => {
+            navLinks.classList.remove("active");
+            hamburgerIcon.classList.remove("fa-times");
+            hamburgerIcon.classList.add("fa-bars");
+          });
+        });
+      }
+
+      const imazhet = [
+        "kapuqat/kapela1.png",
+        "kapuqat/kapela2.png",
+        "kapuqat/kapela3.png",
+        "kapuqat/kapela4.png",
+        "kapuqat/kapela5.png",
+        "kapuqat/kapela6.png",
+      ];
+
+      let currentIndex = 0;
+
+      function ndrroImg() {
+        currentIndex++;
+        if (currentIndex >= imazhet.length) currentIndex = 0;
+        document.getElementById("slideshow").src = imazhet[currentIndex];
+      }
+    </script>
+  </body>
 </html>
-

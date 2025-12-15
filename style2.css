@@ -1,5 +1,7 @@
-h2, h4, p {
-  font-family: 'Playfair Display', serif;
+h2,
+h4,
+p {
+  font-family: "Playfair Display", serif;
 }
 
 /* e gjithe faqja  */
@@ -7,7 +9,6 @@ h2, h4, p {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
- 
 }
 
 body {
@@ -18,11 +19,11 @@ body {
 .container {
   text-align: center;
   background-color: #f0f0f0;
-  padding: 6rem 4rem;   /* ma shumë hapësirë brenda */
+  padding: 6rem 4rem; /* ma shumë hapësirë brenda */
   border-radius: 60px;
   box-shadow: 0 10px 40px rgba(0, 0, 0, 0.06);
-  max-width: 1100px;   /* ma e gjanë */
-  margin: 60px auto;   /* ma shumë hapësirë jashtë */
+  max-width: 1100px; /* ma e gjanë */
+  margin: 60px auto; /* ma shumë hapësirë jashtë */
 }
 .container h2 {
   font-size: 1.6rem;
@@ -48,7 +49,6 @@ body {
 .video-container {
   max-width: 100%; /* Përdoret për të siguruar që videoja mbetet brenda kufijve të ekranit */
   margin: 0 auto; /* Qendron në mes */
-  
 }
 
 video {
@@ -123,4 +123,170 @@ video {
 .gallery img:hover {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* ========== RESPONSIVE DESIGN (RI-SHKRUAR) ========== */
+
+/* TABLET (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .container {
+    max-width: 95%;
+    padding: 4rem 3rem;
+    margin: 50px auto;
+  }
+
+  .container h2 {
+    font-size: 1.4rem;
+  }
+
+  .container p {
+    font-size: 1rem;
+  }
+
+  .container h4 {
+    font-size: 1.4rem;
+  }
+
+  .responsive-video {
+    height: 450px;
+  }
+
+  .shop-ig {
+    padding: 50px 20px;
+  }
+
+  .shop-ig h2 {
+    font-size: 2rem;
+  }
+
+  .shop-ig p {
+    font-size: 1rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery img {
+    height: 280px;
+  }
+}
+
+/* MOBILE (max-width: 768px) */
+@media (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    padding: 3rem 2rem;
+    margin: 40px auto;
+    border-radius: 40px;
+  }
+
+  .container h2 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+  }
+
+  .container p {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+
+  .container h4 {
+    font-size: 1.3rem;
+  }
+
+  .responsive-video {
+    height: 350px;
+  }
+
+  .shop-ig {
+    padding: 40px 15px;
+    border-radius: 40px;
+  }
+
+  .shop-ig h2 {
+    font-size: 1.8rem;
+  }
+
+  .shop-ig p {
+    font-size: 0.95rem;
+    margin-bottom: 25px;
+  }
+  .cart-counter {
+    position: absolute;
+    top: 15px;
+    right: 65px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    padding-top: 15px;
+  }
+
+  .gallery img {
+    height: 250px;
+  }
+}
+
+/* SMALL MOBILE (max-width: 480px) */
+@media (max-width: 480px) {
+  .container {
+    max-width: 95%;
+    padding: 2.5rem 1.5rem;
+    margin: 30px auto;
+    border-radius: 30px;
+  }
+
+  .container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+
+  .container p {
+    font-size: 0.9rem;
+    line-height: 1.5;
+  }
+
+  .container h4 {
+    font-size: 1.2rem;
+  }
+
+  .responsive-video {
+    height: 250px;
+  }
+
+  .shop-ig {
+    padding: 30px 12px;
+    border-radius: 30px;
+  }
+
+  .shop-ig h2 {
+    font-size: 1.5rem;
+  }
+
+  .shop-ig p {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+  }
+
+  .gallery {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding-top: 12px;
+  }
+
+  .gallery img {
+    height: 300px;
+  }
 }

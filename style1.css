@@ -19,25 +19,22 @@
   z-index: -1;
 }
 .responsive-video {
-  width: 100%; 
-  height: 550px; 
-  object-fit: cover; 
-  display: block; 
+  width: 100%;
+  height: 550px;
+  object-fit: cover;
+  display: block;
 }
 
 .video-container {
   max-width: 100%;
-  margin: 0 auto; 
-  
+  margin: 0 auto;
 }
 
 video {
   width: 100%;
-  height: auto; 
-  display: block; 
+  height: auto;
+  display: block;
 }
-
-
 
 .mission {
   text-align: center;
@@ -69,7 +66,7 @@ video {
 .flip-box {
   width: 100%;
   max-width: 250px;
-  aspect-ratio: 5/6; 
+  aspect-ratio: 5/6;
   perspective: 1000px;
 }
 
@@ -106,20 +103,20 @@ video {
 .flip-back {
   transform: rotateY(180deg);
 }
-.accordion{
+.accordion {
   margin: 60px auto;
   width: 600px;
 }
-.accordion li{
+.accordion li {
   list-style: none;
   width: 100%;
   margin: 20px;
   padding: 10px;
   border-radius: 8px;
   background: rgba(255, 255, 255, 0.4);
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
 }
-.accordion li label{
+.accordion li label {
   display: flex;
   align-items: center;
   padding: 10px;
@@ -127,42 +124,186 @@ video {
   font-weight: 500;
   cursor: pointer;
 }
-label::before{
-  content: '+';
+label::before {
+  content: "+";
   margin-right: 10px;
   font-size: 24px;
   font-weight: 600;
 }
-input[type="radio"]{
+input[type="radio"] {
   display: none;
 }
-.accordion .content{
-  color:#555;
+.accordion .content {
+  color: #555;
   padding: 0 10px;
   line-height: 26px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.5s, padding 0.5s;
 }
-.accordion input[type="radio"]:checked + label + .content{
+.accordion input[type="radio"]:checked + label + .content {
   max-height: 400px;
   padding: 10px 10 px 20px;
 }
-.accordion input[type="radio"]:checked + label::before{
-  content: '-';
+.accordion input[type="radio"]:checked + label::before {
+  content: "-";
 }
 
-@media (max-width: 768px) {
+/* ========== RESPONSIVE DESIGN ========== */
+
+/* Tablet Styles (768px - 1024px) */
+@media (max-width: 1024px) {
+  .responsive-video {
+    height: 450px;
+  }
+
   .mission {
-    padding: 3rem 1.5rem;
+    padding: 3.5rem 2rem;
+    max-width: 85%;
+    margin: 35px auto;
+  }
+
+  .flip-section {
+    padding: 40px 15px;
+    width: 85%;
+    margin: 50px auto;
+  }
+
+  .flip-wrapper {
+    gap: 25px;
+  }
+
+  .flip-box {
+    max-width: 220px;
+  }
+
+  .accordion {
+    width: 550px;
+    margin: 50px auto;
+  }
+}
+
+/* Mobile/Phone Styles (up to 768px) */
+@media (max-width: 768px) {
+  .responsive-video {
+    height: 350px;
+  }
+
+  .mission {
+    padding: 2.5rem 1.5rem;
+    max-width: 90%;
+    margin: 30px auto;
+    border-radius: 40px;
+  }
+
+  .mission h2 {
+    font-size: 24px;
+  }
+
+  .mission p {
+    font-size: 15px;
   }
 
   .flip-section {
     padding: 30px 10px;
+    width: 90%;
+    margin: 40px auto;
+    border-radius: 30px;
   }
 
   .flip-wrapper {
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
+  }
+
+  .flip-box {
+    max-width: 100%;
+  }
+
+  .accordion {
+    width: 90%;
+    max-width: 500px;
+    margin: 40px auto;
+  }
+
+  .accordion li {
+    margin: 15px 0;
+    padding: 8px;
+  }
+
+  .accordion li label {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .accordion .content {
+    font-size: 14px;
+    line-height: 24px;
   }
 }
 
+/* Small Mobile (up to 480px) */
+@media (max-width: 480px) {
+  .responsive-video {
+    height: 250px;
+  }
+
+  .mission {
+    padding: 2rem 1.2rem;
+    max-width: 95%;
+    margin: 25px auto;
+    border-radius: 30px;
+  }
+
+  .mission h2 {
+    font-size: 20px;
+  }
+
+  .mission p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .flip-section {
+    padding: 25px 8px;
+    width: 95%;
+    margin: 30px auto;
+    border-radius: 25px;
+  }
+
+  .flip-wrapper {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+
+  .flip-box {
+    max-width: 280px;
+    margin: 0 auto;
+  }
+
+  .accordion {
+    width: 95%;
+    margin: 30px auto;
+  }
+
+  .accordion li {
+    margin: 12px 0;
+    padding: 6px;
+  }
+
+  .accordion li label {
+    font-size: 14px;
+    padding: 6px;
+  }
+
+  label::before {
+    font-size: 20px;
+    margin-right: 8px;
+  }
+
+  .accordion .content {
+    font-size: 13px;
+    line-height: 22px;
+    padding: 0 8px;
+  }
+}

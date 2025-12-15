@@ -1,160 +1,209 @@
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>DIVINE.</title>
-  <link rel="stylesheet" href="style.css">
-  <link rel="stylesheet" href="style1.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DIVINE.</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
- 
-<header>
-   
-   <a href="index.html" style="font-size: 24px; font-weight: bold; color: black; text-decoration: none;">DIVINE.</a>
-  <nav class="right-section">
-    <a href="index.html">Home</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="shop.html">Shop</a>
-    <a href="contact.html">Contact</a>
-     <a href="shop.html" id="cartIcon">
-       🛍️ 
-       <span class="cart-counter"></span> </a>
-  </nav>
-  
-
-</header>
-<br> 
-        <video class="responsive-video" autoplay muted loop>
-            <source src="homeVideo/v1.mp4" type="video/mp4">
-        </video>
-<br>
-<br>
-<br>
-  <div class="mission">
-  <h2>Our Vibe</h2>
-  <p>
-    Divine ka lindur nga guximi, i krijuar për ata që ecin me qëllim. 
-    Ne besojmë në stil me kuptim, modë të ngadaltë dhe autenticitet të pastër.
-  </p>
-</div>
-<section class="flip-section">
-  <div class="flip-wrapper">
-    <div class="flip-box">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="homecoll/i1.png" alt="Image 1">
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style1.css" />
+  </head>
+  <body>
+    <header>
+      <a
+        href="index.html"
+        style="
+          font-size: 24px;
+          font-weight: bold;
+          color: black;
+          text-decoration: none;
+        "
+        >DIVINE.</a
+      >
+      <button class="hamburger-menu" aria-label="Toggle menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+      <nav class="right-section">
+        <div class="nav-links">
+          <a href="index.html">Home</a>
+          <a href="aboutus.html">About Us</a>
+          <a href="shop.html">Shop</a>
+          <a href="Contacts.html">Contact</a>
         </div>
-        <div class="flip-back">
-          <img src="homecoll/i4.png" alt="Image 1 Hover">
+        <div class="nav-icons">
+          <a href="Cart.html" class="cart-icon">
+            <i class="fa-solid fa-bag-shopping"></i>
+            <span class="cart-counter">6</span>
+          </a>
+          <a href="login.html" class="account-icon">
+            <i class="fa-regular fa-user"></i>
+          </a>
         </div>
-      </div>
+      </nav>
+    </header>
+    <br />
+    <video class="responsive-video" autoplay muted loop>
+      <source src="homeVideo/v1.mp4" type="video/mp4" />
+    </video>
+    <br />
+    <br />
+    <br />
+    <div class="mission">
+      <h2>Our Vibe</h2>
+      <p>
+        Divine ka lindur nga guximi, i krijuar për ata që ecin me qëllim. Ne
+        besojmë në stil me kuptim, modë të ngadaltë dhe autenticitet të pastër.
+      </p>
     </div>
-
-    <div class="flip-box">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="homecoll/i2.png" alt="Image 2">
-        </div>
-        <div class="flip-back">
-          <img src="homecoll/i5.png" alt="Image 2 Hover">
-        </div>
-      </div>
-    </div>
-
-    <div class="flip-box">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="homecoll/i3.png" alt="Image 3">
-        </div>
-        <div class="flip-back">
-          <img src="homecoll/i5.png" alt="Image 3 Hover">
-        </div>
-      </div>
-    </div>
-
-    <div class="flip-box">
-      <div class="flip-inner">
-        <div class="flip-front">
-          <img src="homecoll/i7.png" alt="Image 3">
-        </div>
-        <div class="flip-back">
-          <img src="homecoll/i8.png" alt="Image 3 Hover">
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<br> 
-        <video class="responsive-video" autoplay muted loop>
-            <source src="homeVideo/v2.mp4" type="video/mp4">
-        </video>
-        <ul class="accordion">
-
-       <li>
-          <input type="radio" name="accordion" id="first"checked>
-          <label for="first">Do I need to create an account to place an order?</label>
-          <div class="content">
-          <p>
-            Yes,creating an account is required in order to place an order.This allows us to securely 
-             store your information ,provide faster checkout,and give you access to order tracking and purchase history.
-          </p>
-          </div>
-         </li>
-          <li>
-          <input type="radio" name="accordion" id="second">
-          <label for="second">Do you offer Cash on Delivery?</label>
-          <div class="content">
-          <p>
-            Yes,we offer Cash on Delivery as a payment option.You can pay for your order directly 
-            to the courier at the time of delivery.
-          </p>
-          </div>
-         </li>
-          <li>
-          <input type="radio" name="accordion" id="third">
-          <label for="third">How much does the shipping cost?</label>
-          <div class="content">
-          <p>
-           Shipping costs vary depending on your location and the total weight of your order.
-          </p>
-          </div>
-         </li>
-        </ul>
-        <footer class="main-footer">
-          <div class="footer-content">
-            <div class="footer-column">
-              <h3>DIVINE.</h3>
-              <p>Rroba me stil për Femra,
-                 Meshkuj. Blej thjesht.
-                  Vesh me klas.</p>
-              </div>
-              <div class="footer-column">
-                <h4>Menu</h4>
-                <ul>
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="aboutus.html">About us</a></li>
-                  <li><a href="shop.html">Shop</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                </ul>
-              </div>
-              <div class="footer-column">
-                <h4>Kontakti</h4>
-                <p><strong>Email:</strong>Divine@gmail.com</p>
-                 <p><strong>Tel:</strong>+383 00 000 000</p>
-                 <div class="socials">
-                  <a href="https://www.instagram.com/">Instagram</a>
-                  <a href="https://www.facebook.com/">Facebook</a>
-                  <a href="https://www.tiktok.com/">TikTok</a>
-                 </div>
-              </div>
+    <section class="flip-section">
+      <div class="flip-wrapper">
+        <div class="flip-box">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="homecoll/i1.png" alt="Image 1" />
             </div>
-            <div class="footer-bottom">
-            <p>&copy; 2025 DIVINE. Të gjitha të drejtat e rezervuara.</p>
-           </div>
-          
-        </footer>
-        </body>
-        </html>
+            <div class="flip-back">
+              <img src="homecoll/i4.png" alt="Image 1 Hover" />
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-box">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="homecoll/i2.png" alt="Image 2" />
+            </div>
+            <div class="flip-back">
+              <img src="homecoll/i5.png" alt="Image 2 Hover" />
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-box">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="homecoll/i3.png" alt="Image 3" />
+            </div>
+            <div class="flip-back">
+              <img src="homecoll/i5.png" alt="Image 3 Hover" />
+            </div>
+          </div>
+        </div>
+
+        <div class="flip-box">
+          <div class="flip-inner">
+            <div class="flip-front">
+              <img src="homecoll/i7.png" alt="Image 3" />
+            </div>
+            <div class="flip-back">
+              <img src="homecoll/i8.png" alt="Image 3 Hover" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <br />
+    <video class="responsive-video" autoplay muted loop>
+      <source src="homeVideo/v2.mp4" type="video/mp4" />
+    </video>
+    <ul class="accordion">
+      <li>
+        <input type="radio" name="accordion" id="first" checked />
+        <label for="first"
+          >Do I need to create an account to place an order?</label
+        >
+        <div class="content">
+          <p>
+            Yes,creating an account is required in order to place an order.This
+            allows us to securely store your information ,provide faster
+            checkout,and give you access to order tracking and purchase history.
+          </p>
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="accordion" id="second" />
+        <label for="second">Do you offer Cash on Delivery?</label>
+        <div class="content">
+          <p>
+            Yes,we offer Cash on Delivery as a payment option.You can pay for
+            your order directly to the courier at the time of delivery.
+          </p>
+        </div>
+      </li>
+      <li>
+        <input type="radio" name="accordion" id="third" />
+        <label for="third">How much does the shipping cost?</label>
+        <div class="content">
+          <p>
+            Shipping costs depend on your location and the total weight of your
+            order. The base shipping fee starts at €5.00. Orders qualify for
+            free shipping when the subtotal reaches €150.00 or more.
+          </p>
+        </div>
+      </li>
+    </ul>
+    <footer class="main-footer">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>DIVINE.</h3>
+          <p>Rroba me stil për Femra, Meshkuj. Blej thjesht. Vesh me klas.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Menu</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="aboutus.html">About us</a></li>
+            <li><a href="shop.html">Shop</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Kontakti</h4>
+          <p><strong>Email:</strong>Divine@gmail.com</p>
+          <p><strong>Tel:</strong>+383 00 000 000</p>
+          <div class="socials">
+            <a href="https://www.instagram.com/">Instagram</a>
+            <a href="https://www.facebook.com/">Facebook</a>
+            <a href="https://www.tiktok.com/">TikTok</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 DIVINE. Të gjitha të drejtat e rezervuara.</p>
+      </div>
+    </footer>
+
+    <script>
+      // Hamburger Menu Toggle
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const navLinks = document.querySelector(".nav-links");
+      const hamburgerIcon = hamburgerMenu.querySelector("i");
+
+      hamburgerMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        if (navLinks.classList.contains("active")) {
+          hamburgerIcon.classList.remove("fa-bars");
+          hamburgerIcon.classList.add("fa-times");
+        } else {
+          hamburgerIcon.classList.remove("fa-times");
+          hamburgerIcon.classList.add("fa-bars");
+        }
+      });
+
+      // Close menu when clicking on a link
+      const navLinksItems = document.querySelectorAll(".nav-links a");
+      navLinksItems.forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          hamburgerIcon.classList.remove("fa-times");
+          hamburgerIcon.classList.add("fa-bars");
+        });
+      });
+    </script>
+  </body>
+</html>

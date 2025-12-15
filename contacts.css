@@ -11,9 +11,9 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
 }
 
+/* HEADER */
 header {
   width: 100%;
   padding: 20px 40px;
@@ -28,16 +28,6 @@ header {
   -webkit-backdrop-filter: blur(10px);
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
-}
-
-header.hide {
-  transform: translateY(-100%);
-}
-
-header .logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #333;
 }
 
 .right-section {
@@ -65,6 +55,49 @@ header .logo {
   color: #000;
 }
 
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.cart-icon {
+  position: relative;
+  font-size: 24px;
+  color: #807c7c;
+  transition: color 0.3s;
+}
+
+.cart-icon:hover {
+  color: #3a3a3a;
+}
+
+.cart-counter {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: #000;
+  color: #fff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.account-icon {
+  font-size: 24px;
+  color: #000;
+  transition: 0.3s;
+}
+
+.account-icon:hover {
+  color: #2e2e2e;
+}
+
 /* Hamburger Menu Button */
 .hamburger-menu {
   display: none;
@@ -82,37 +115,58 @@ header .logo {
   color: #000;
 }
 
-/* Login form */
-.login-container {
+/* CONTACT SECTION */
+.contact-container {
   width: 100%;
-  max-width: 450px;
-  background-color: #fff;
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  margin: 40px 0;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 40px;
 }
 
-.login-container h2 {
-  margin-bottom: 30px;
+.contact-container h2 {
+  text-align: center;
   font-size: 28px;
-  color: #333;
+  margin-bottom: 10px;
+}
+
+.contact-container p {
+  text-align: center;
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* GRID */
+.contact-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: stretch;
+}
+
+/* FORM */
+.contact-content form {
+  background: #fff;
+  padding: 40px;
+  border-radius: 24px;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .form-group {
   margin-bottom: 20px;
-  text-align: left;
 }
 
 .form-group label {
   display: block;
   margin-bottom: 8px;
   font-weight: 500;
-  font-size: 16px;
 }
 
-.form-group input {
+.form-group input,
+.form-group textarea {
   width: 100%;
   padding: 14px 16px;
   border-radius: 12px;
@@ -120,104 +174,46 @@ header .logo {
   font-size: 16px;
 }
 
-.login-container button[type="submit"] {
-  width: 100%;
+.form-group textarea {
+  resize: none;
+  height: 140px;
+}
+
+form button {
+  margin-top: 10px;
   padding: 14px;
-  background-color: #000;
+  border: none;
+  border-radius: 12px;
+  background: #000;
   color: #fff;
   font-size: 18px;
-  border: none;
-  border-radius: 12px;
   cursor: pointer;
-  transition: 0.3s;
-  margin-top: 10px;
 }
 
-.login-container button[type="submit"]:hover {
-  background-color: #444;
+form button:hover {
+  background: #333;
 }
 
-.login-container p {
-  margin-top: 15px;
-  font-size: 14px;
+/* MAP */
+.map-container {
+  background: #fff;
+  border-radius: 24px;
+  overflow: hidden;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12);
 }
 
-.login-container p a {
-  color: #000;
-  text-decoration: underline;
-}
-
-/* Divider */
-.divider {
-  display: flex;
-  align-items: center;
-  text-align: center;
-  margin: 25px 0;
-}
-
-.divider::before,
-.divider::after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid #ccc;
-}
-
-.divider span {
-  margin: 0 10px;
-  color: #555;
-}
-
-/* Social login buttons */
-.social-login button {
+.map-container iframe {
   width: 100%;
-  padding: 12px;
-  margin-bottom: 12px;
-  border: none;
-  border-radius: 12px;
-  font-size: 16px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  color: #fff;
-  transition: 0.3s;
+  height: 100%;
+  border: 0;
 }
 
-.social-login .apple {
-  background-color: #000;
-}
-
-.social-login .apple:hover {
-  background-color: #333;
-}
-
-.social-login .google {
-  background-color: #000;
-}
-
-.social-login .google:hover {
-  background-color: #333;
-}
-
-.social-login .microsoft {
-  background-color: #000;
-}
-
-.social-login .microsoft:hover {
-  background-color: #333;
-}
-
-.social-login i {
-  font-size: 20px;
-}
-
-/* Footer */
+/* FOOTER */
 .main-footer {
-  background-color: #111;
+  margin-top: auto;
+  background: #111;
   color: #eee;
   padding: 30px 20px 15px;
-  width: 100%;
   font-size: 14px;
 }
 
@@ -236,17 +232,14 @@ header .logo {
 
 .footer-column h3,
 .footer-column h4 {
-  color: #fff;
   margin-bottom: 10px;
-  font-size: 16px;
+  color: #fff;
 }
 
 .footer-column p,
 .footer-column a {
   color: #bbb;
   font-size: 14px;
-  line-height: 1.6;
-  text-decoration: none;
 }
 
 .footer-column a:hover {
@@ -255,7 +248,6 @@ header .logo {
 
 .footer-column ul {
   list-style: none;
-  padding: 0;
 }
 
 .footer-column ul li {
@@ -263,73 +255,98 @@ header .logo {
 }
 
 .socials a {
-  display: inline-block;
   margin-right: 12px;
-  color: #bbb;
+  font-size: 12px;
   font-weight: bold;
   text-transform: uppercase;
-  font-size: 12px;
 }
 
 .footer-bottom {
-  text-align: center;
-  border-top: 1px solid #333;
   margin-top: 20px;
   padding-top: 10px;
+  border-top: 1px solid #333;
+  text-align: center;
   font-size: 12px;
   color: #777;
 }
 
-/* ========== RESPONSIVE DESIGN ========== */
+/* ========== RESPONSIVE DESIGN (RI-SHKRUAR) ========== */
 
-/* Tablet Styles (768px - 1024px) */
+/* TABLET (max-width: 1024px) */
 @media (max-width: 1024px) {
   header {
     padding: 18px 30px;
   }
 
   .right-section {
-    gap: 15px;
+    gap: 16px;
   }
 
-  .right-section a {
+  .nav-links a {
     font-size: 15px;
     padding: 6px 10px;
   }
 
-  .login-container {
-    max-width: 420px;
-    padding: 35px;
-    margin: 35px 0;
+  .contact-container {
+    padding: 0 30px;
+    margin: 50px auto;
   }
 
-  .login-container h2 {
+  .contact-container h2 {
     font-size: 26px;
+  }
+
+  .contact-content {
+    gap: 30px;
+  }
+
+  .contact-content form {
+    padding: 35px;
+  }
+
+  .map-container {
+    min-height: 350px;
+  }
+
+  .footer-content {
+    gap: 20px;
   }
 }
 
-/* Mobile/Phone Styles (up to 768px) */
+/* MOBILE (max-width: 768px) */
 @media (max-width: 768px) {
   header {
     padding: 15px 20px;
-    flex-wrap: nowrap;
-    position: relative;
+    display: flex;
+    align-items: center;
   }
 
-  header .logo {
+  .logo {
     font-size: 20px;
   }
 
   .hamburger-menu {
     display: block;
-    order: 2;
     margin-left: auto;
-    margin-right: 15px;
+    margin-right: 10px;
   }
 
   .right-section {
-    gap: 10px;
-    flex-wrap: nowrap;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .nav-icons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto; /* IKONAT NE TE DJATHTE NE MOBILE */
+  }
+
+  .cart-icon,
+  .account-icon {
+    font-size: 20px;
   }
 
   .nav-links {
@@ -350,8 +367,22 @@ header .logo {
     z-index: 1000;
     max-height: calc(100vh - 70px);
     overflow-y: auto;
+    display: flex;
   }
-
+  .cart-counter {
+    position: absolute;
+    left: 9px;
+    background: #000;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: bold;
+  }
   .nav-links.active {
     transform: translateX(0);
   }
@@ -373,40 +404,34 @@ header .logo {
     padding-left: 10px;
   }
 
-  .login-container {
-    max-width: 90%;
-    padding: 30px 25px;
-    margin: 30px 20px;
-    border-radius: 16px;
+  .contact-container {
+    padding: 0 20px;
+    margin: 40px auto;
   }
 
-  .login-container h2 {
+  .contact-container h2 {
     font-size: 24px;
-    margin-bottom: 25px;
+    margin-bottom: 8px;
   }
 
-  .form-group {
-    margin-bottom: 18px;
-  }
-
-  .form-group label {
+  .contact-container p {
     font-size: 15px;
+    margin-bottom: 30px;
   }
 
-  .form-group input {
-    padding: 12px 14px;
-    font-size: 15px;
+  .contact-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
   }
 
-  .login-container button[type="submit"] {
-    padding: 12px;
-    font-size: 16px;
+  .contact-content form {
+    padding: 30px 25px;
+    border-radius: 20px;
   }
 
-  .social-login button {
-    padding: 11px;
-    font-size: 15px;
-    margin-bottom: 10px;
+  .map-container {
+    min-height: 300px;
+    border-radius: 20px;
   }
 
   .main-footer {
@@ -441,19 +466,19 @@ header .logo {
   }
 }
 
-/* Small Mobile (up to 480px) */
+/* SMALL MOBILE (max-width: 480px) */
 @media (max-width: 480px) {
   header {
     padding: 12px 15px;
   }
 
-  header .logo {
+  .logo {
     font-size: 18px;
   }
 
   .hamburger-menu {
     font-size: 22px;
-    margin-right: 10px;
+    margin-right: 8px;
   }
 
   .nav-links {
@@ -466,58 +491,42 @@ header .logo {
     font-size: 15px;
   }
 
-  .login-container {
-    max-width: 95%;
-    padding: 25px 20px;
-    margin: 25px 10px;
-    border-radius: 14px;
+  .nav-icons {
+    gap: 10px;
   }
 
-  .login-container h2 {
+  .cart-icon,
+  .account-icon {
+    font-size: 18px;
+  }
+
+  .contact-container {
+    padding: 0 15px;
+    margin: 30px auto;
+  }
+
+  .contact-container h2 {
     font-size: 22px;
-    margin-bottom: 20px;
-  }
-
-  .form-group {
-    margin-bottom: 16px;
-  }
-
-  .form-group label {
-    font-size: 14px;
     margin-bottom: 6px;
   }
 
-  .form-group input {
-    padding: 11px 12px;
+  .contact-container p {
     font-size: 14px;
-    border-radius: 10px;
+    margin-bottom: 25px;
   }
 
-  .login-container button[type="submit"] {
-    padding: 11px;
-    font-size: 15px;
+  .contact-content {
+    gap: 20px;
   }
 
-  .login-container p {
-    font-size: 13px;
+  .contact-content form {
+    padding: 25px 20px;
+    border-radius: 16px;
   }
 
-  .divider {
-    margin: 20px 0;
-  }
-
-  .divider span {
-    font-size: 13px;
-  }
-
-  .social-login button {
-    padding: 10px;
-    font-size: 14px;
-    margin-bottom: 8px;
-  }
-
-  .social-login i {
-    font-size: 18px;
+  .map-container {
+    min-height: 250px;
+    border-radius: 16px;
   }
 
   .main-footer {

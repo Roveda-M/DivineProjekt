@@ -2,28 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>DIVINE.</title>
+  <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
   <link rel="stylesheet" href="style.css">
-  
   <link rel="stylesheet" href="style2.css">
 </head>
 <body>
 
- 
 <header>
-   
-   <a href="index.html" style="font-size: 24px; font-weight: bold; color: black; text-decoration: none;">DIVINE.</a>
+  <a href="Index.html" style="font-size: 24px; font-weight: bold; color: black; text-decoration: none;">DIVINE.</a>
+  <button class="hamburger-menu" aria-label="Toggle menu">
+    <i class="fa-solid fa-bars"></i>
+  </button>
   <nav class="right-section">
-    <a href="index.html">Home</a>
-    <a href="aboutus.html">About Us</a>
-    <a href="shop.html">Shop</a>
-    <a href="contact.html">Contact</a>
-     <a href="shop.html" id="cartIcon">
-       🛍️ 
-       <span class="cart-counter"></span> </a>
+    <div class="nav-links">
+      <a href="Index.html">Home</a>
+      <a href="Aboutus.html">About Us</a>
+      <a href="Shop.html">Shop</a>
+      <a href="Contacts.html">Contact</a>
+    </div>
+    <div class="nav-icons">
+      <a href="Cart.html" class="cart-icon">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="cart-counter">6</span>
+      </a>
+      <a href="Login.html" class="account-icon">
+        <i class="fa-regular fa-user"></i>
+      </a>
+    </div>
   </nav>
-  
-
 </header>
 <br> 
         <video class="responsive-video" autoplay muted loop>
@@ -40,7 +51,7 @@
         Faleminderit që jeni pjesë e këtij rrugëtimi.
         Kjo është vetëm fillimi.</p>
         <br>
-		<h4>The Divine Crew🖤</h4>
+    <h4>The Divine Crew🖤</h4>
       </p>
     </div>
 
@@ -106,5 +117,35 @@
            </div>
           
         </footer>
+
+        <script>
+          // Hamburger Menu Toggle
+          const hamburgerMenu = document.querySelector(".hamburger-menu");
+          const navLinks = document.querySelector(".nav-links");
+          const hamburgerIcon = hamburgerMenu?.querySelector("i");
+
+          if (hamburgerMenu && navLinks && hamburgerIcon) {
+            hamburgerMenu.addEventListener("click", () => {
+              navLinks.classList.toggle("active");
+              if (navLinks.classList.contains("active")) {
+                hamburgerIcon.classList.remove("fa-bars");
+                hamburgerIcon.classList.add("fa-times");
+              } else {
+                hamburgerIcon.classList.remove("fa-times");
+                hamburgerIcon.classList.add("fa-bars");
+              }
+            });
+
+            // Close menu when clicking on a link
+            const navLinksItems = document.querySelectorAll(".nav-links a");
+            navLinksItems.forEach((link) => {
+              link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+                hamburgerIcon.classList.remove("fa-times");
+                hamburgerIcon.classList.add("fa-bars");
+              });
+            });
+          }
+        </script>
         </body>
         </html>
