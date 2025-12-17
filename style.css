@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+html {
+  overflow-y: scroll; /* mbaj gjithmone scrollbar vertikal qe headeri mos levize */
+}
+
 /* Trupi i faqes */
 body {
   height: 100vh;
@@ -69,6 +73,11 @@ header.hide {
   font-size: 16px;
   padding: 8px 12px;
   transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a.active {
+  color: #000;
+  border-bottom: 2px solid #000;
 }
 
 .nav-links a:hover {
@@ -362,6 +371,9 @@ footer {
     margin: 8px 0;
     font-size: 11px;
   }
+}
+.nav-icons i {
+  font-size: 20px;
 }
 
 /* Small Mobile (up to 480px) */

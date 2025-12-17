@@ -3,7 +3,88 @@
   text-align: center;
   margin-top: 100px;
 }
+header {
+  width: 100%;
+  padding: 20px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
 
+header.hide {
+  transform: translateY(-100%);
+}
+
+/* LOGO majtas */
+.logo {
+  order: 1;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.left-section {
+  order: 2;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  font-size: 16px;
+  color: #333;
+  gap: 20px;
+}
+
+.right-section {
+  order: 3;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: #333;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.nav-links a:hover {
+  background: #eaeaea;
+  border-radius: 6px;
+  color: #000;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.right-section a {
+  color: #333;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.right-section a:hover {
+  background: #eaeaea;
+  border-radius: 6px;
+  color: #000;
+}
 .product-title h2 {
   font-size: 30px;
   color: #4f3b3b;
@@ -170,8 +251,8 @@ button:hover {
 }
 .cart-counter {
   position: absolute;
-  top: 20px;
-  right: 96px;
+  top: 16px;
+  right: 98px;
   background: #000;
   color: #fff;
   border-radius: 50%;
@@ -340,6 +421,7 @@ button:hover {
     font-size: 12px;
     font-weight: bold;
   }
+
   .product-card {
     flex: 1 1 calc(50% - 10px);
     height: 350px;
@@ -396,7 +478,9 @@ button:hover {
     right: 0;
   }
 }
-
+.nav-icons i {
+  font-size: 20px;
+}
 @media (max-width: 480px) {
   .product-container {
     padding: 2%;

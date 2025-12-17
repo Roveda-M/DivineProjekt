@@ -124,7 +124,9 @@ video {
   transform: scale(1.05);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
+.nav-icons i {
+  font-size: 20px;
+}
 /* ========== RESPONSIVE DESIGN (RI-SHKRUAR) ========== */
 
 /* TABLET (max-width: 1024px) */
@@ -215,7 +217,7 @@ video {
   }
   .cart-counter {
     position: absolute;
-    top: 15px;
+    top: 16px;
     right: 65px;
     background: #000;
     color: #fff;

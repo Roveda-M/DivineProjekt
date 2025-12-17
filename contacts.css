@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+html {
+  overflow-y: scroll; /* parandalon levizjen horizontale kur hapet scrollbari */
+}
+
 body {
   font-size: 16px;
   background-color: #f5f5f5;
@@ -30,7 +34,30 @@ header {
   transition: transform 0.3s ease;
 }
 
+header.hide {
+  transform: translateY(-100%);
+}
+
+/* LOGO majtas */
+.logo {
+  order: 1;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.left-section {
+  order: 2;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  font-size: 16px;
+  color: #333;
+  gap: 20px;
+}
+
 .right-section {
+  order: 3;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -49,6 +76,11 @@ header {
   transition: background 0.3s, color 0.3s;
 }
 
+.nav-links a.active {
+  color: #000;
+  border-bottom: 2px solid #000;
+}
+
 .nav-links a:hover {
   background: #eaeaea;
   border-radius: 6px;
@@ -61,21 +93,44 @@ header {
   gap: 15px;
 }
 
-.cart-icon {
-  position: relative;
+.right-section a {
+  color: #333;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.right-section a:hover {
+  background: #eaeaea;
+  border-radius: 6px;
+  color: #000;
+}
+
+.account-icon {
+  font-size: 24px;
+  color: #000;
+  margin-top: 5px;
+
+  transition: 0.3s;
+}
+
+.account-icon:hover {
+  color: #2e2e2e;
+}
+
+.cart-icon i {
   font-size: 24px;
   color: #807c7c;
   transition: color 0.3s;
 }
 
-.cart-icon:hover {
+.cart-icon:hover i {
   color: #3a3a3a;
 }
-
 .cart-counter {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: 17px;
+  right: 98px;
   background: #000;
   color: #fff;
   border-radius: 50%;
@@ -87,17 +142,9 @@ header {
   font-size: 12px;
   font-weight: bold;
 }
-
-.account-icon {
-  font-size: 24px;
-  color: #000;
-  transition: 0.3s;
+.nav-icons i {
+  font-size: 20px;
 }
-
-.account-icon:hover {
-  color: #2e2e2e;
-}
-
 /* Hamburger Menu Button */
 .hamburger-menu {
   display: none;

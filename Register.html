@@ -28,14 +28,13 @@
       </button>
       <nav class="right-section">
         <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="aboutus.html">About Us</a>
-          <a href="shop.html">Shop</a>
+          <a href="Index.html">Home</a>
+          <a href="Aboutus.html">About Us</a>
+          <a href="Shop.html">Shop</a>
           <a href="Contacts.html">Contact</a>
         </div>
       </nav>
     </header>
-
     <div class="login-container">
       <h2>Create Your Account</h2>
       <form action="register_process.html" method="POST">
@@ -92,9 +91,7 @@
         <button type="submit">Register</button>
         <p>Already have an account? <a href="login.html">Login</a></p>
       </form>
-
       <div class="divider"><span>OR</span></div>
-
       <div class="social-login">
         <button class="apple">
           <i class="fab fa-apple"></i> Register with Apple
@@ -107,7 +104,6 @@
         </button>
       </div>
     </div>
-
     <footer class="main-footer">
       <div class="footer-content">
         <div class="footer-column">
@@ -117,10 +113,10 @@
         <div class="footer-column">
           <h4>Menu</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About us</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Aboutus.html">About us</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="Contacts.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -138,13 +134,11 @@
         <p>&copy; 2025 DIVINE. Të gjitha të drejtat e rezervuara.</p>
       </div>
     </footer>
-
     <script>
       // Hamburger Menu Toggle
       const hamburgerMenu = document.querySelector(".hamburger-menu");
       const navLinks = document.querySelector(".nav-links");
       const hamburgerIcon = hamburgerMenu.querySelector("i");
-
       hamburgerMenu.addEventListener("click", () => {
         navLinks.classList.toggle("active");
         if (navLinks.classList.contains("active")) {
@@ -155,7 +149,6 @@
           hamburgerIcon.classList.add("fa-bars");
         }
       });
-
       // Close menu when clicking on a link
       const navLinksItems = document.querySelectorAll(".nav-links a");
       navLinksItems.forEach((link) => {

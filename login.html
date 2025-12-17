@@ -27,9 +27,9 @@
       </button>
       <nav class="right-section">
         <div class="nav-links">
-          <a href="index.html">Home</a>
-          <a href="aboutus.html">About Us</a>
-          <a href="shop.html">Shop</a>
+          <a href="Index.html">Home</a>
+          <a href="Aboutus.html">About Us</a>
+          <a href="Shop.html">Shop</a>
           <a href="Contacts.html">Contact</a>
         </div>
       </nav>
@@ -86,10 +86,10 @@
         <div class="footer-column">
           <h4>Menu</h4>
           <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="aboutus.html">About us</a></li>
-            <li><a href="shop.html">Shop</a></li>
-            <li><a href="contact.html">Contact</a></li>
+            <li><a href="Index.html">Home</a></li>
+            <li><a href="Aboutus.html">About us</a></li>
+            <li><a href="Shop.html">Shop</a></li>
+            <li><a href="Contacts.html">Contact</a></li>
           </ul>
         </div>
         <div class="footer-column">
@@ -110,28 +110,28 @@
 
     <script>
       // Hamburger Menu Toggle
-      const hamburgerMenu = document.querySelector('.hamburger-menu');
-      const navLinks = document.querySelector('.nav-links');
-      const hamburgerIcon = hamburgerMenu.querySelector('i');
+      const hamburgerMenu = document.querySelector(".hamburger-menu");
+      const navLinks = document.querySelector(".nav-links");
+      const hamburgerIcon = hamburgerMenu.querySelector("i");
 
-      hamburgerMenu.addEventListener('click', () => {
-        navLinks.classList.toggle('active');
-        if (navLinks.classList.contains('active')) {
-          hamburgerIcon.classList.remove('fa-bars');
-          hamburgerIcon.classList.add('fa-times');
+      hamburgerMenu.addEventListener("click", () => {
+        navLinks.classList.toggle("active");
+        if (navLinks.classList.contains("active")) {
+          hamburgerIcon.classList.remove("fa-bars");
+          hamburgerIcon.classList.add("fa-times");
         } else {
-          hamburgerIcon.classList.remove('fa-times');
-          hamburgerIcon.classList.add('fa-bars');
+          hamburgerIcon.classList.remove("fa-times");
+          hamburgerIcon.classList.add("fa-bars");
         }
       });
 
       // Close menu when clicking on a link
-      const navLinksItems = document.querySelectorAll('.nav-links a');
-      navLinksItems.forEach(link => {
-        link.addEventListener('click', () => {
-          navLinks.classList.remove('active');
-          hamburgerIcon.classList.remove('fa-times');
-          hamburgerIcon.classList.add('fa-bars');
+      const navLinksItems = document.querySelectorAll(".nav-links a");
+      navLinksItems.forEach((link) => {
+        link.addEventListener("click", () => {
+          navLinks.classList.remove("active");
+          hamburgerIcon.classList.remove("fa-times");
+          hamburgerIcon.classList.add("fa-bars");
         });
       });
     </script>

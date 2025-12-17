@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+html {
+  overflow-y: scroll; /* mbaj gjithmone scrollbar vertikal qe headeri mos levize */
+}
+
 body {
   font-size: 16px;
   background-color: #f5f5f5;

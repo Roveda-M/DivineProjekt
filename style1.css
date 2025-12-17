@@ -148,7 +148,9 @@ input[type="radio"] {
 .accordion input[type="radio"]:checked + label::before {
   content: "-";
 }
-
+.nav-icons i {
+  font-size: 20px;
+}
 /* ========== RESPONSIVE DESIGN ========== */
 
 /* Tablet Styles (768px - 1024px) */

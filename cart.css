@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+html {
+  overflow-y: scroll; /* mbaj gjithmone scrollbar vertikal qe headeri mos levize */
+}
+
 body {
   font-size: 16px;
   background-color: #f5f5f5;
@@ -30,7 +34,30 @@ header {
   transition: transform 0.3s ease;
 }
 
+header.hide {
+  transform: translateY(-100%);
+}
+
+/* LOGO majtas */
+.logo {
+  order: 1;
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+}
+
+.left-section {
+  order: 2;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
+  font-size: 16px;
+  color: #333;
+  gap: 20px;
+}
+
 .right-section {
+  order: 3;
   display: flex;
   align-items: center;
   gap: 20px;
@@ -61,9 +88,26 @@ header {
   gap: 15px;
 }
 
+/* Madhesi standarde per te gjitha ikonat ne header */
+.nav-icons i {
+  font-size: 20px;
+}
+
+.right-section a {
+  color: #333;
+  font-size: 16px;
+  padding: 8px 12px;
+  transition: background 0.3s, color 0.3s;
+}
+
+.right-section a:hover {
+  background: #eaeaea;
+  border-radius: 6px;
+  color: #000;
+}
+
 .cart-icon {
   position: relative;
-  font-size: 24px;
   color: #807c7c;
   transition: color 0.3s;
 }
@@ -74,8 +118,8 @@ header {
 
 .cart-counter {
   position: absolute;
-  top: -8px;
-  right: -8px;
+  top: -2px;
+  right: 2px;
   background: #000;
   color: #fff;
   border-radius: 50%;
@@ -89,7 +133,6 @@ header {
 }
 
 .account-icon {
-  font-size: 24px;
   color: #000;
   transition: 0.3s;
 }

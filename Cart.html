@@ -43,7 +43,6 @@
         </div>
       </nav>
     </header>
-
     <div class="shop-container">
       <h1>Shopping Cart</h1>
       <div class="cart-content">
@@ -79,7 +78,6 @@
               </button>
             </div>
           </div>
-
           <div class="cart-item">
             <div class="item-image">
               <img src="imgF/p2.png" alt="Zip-up Hoodie" />
@@ -109,7 +107,6 @@
               </button>
             </div>
           </div>
-
           <div class="cart-item">
             <div class="item-image">
               <img src="imgF/p3.png" alt="Crop T-shirt" />
@@ -141,7 +138,6 @@
               </button>
             </div>
           </div>
-
           <div class="cart-item">
             <div class="item-image">
               <img src="imgF/p4.png" alt="Jacket" />
@@ -171,7 +167,6 @@
               </button>
             </div>
           </div>
-
           <div class="cart-item">
             <div class="item-image">
               <img src="imgM/p7.png" alt="T-shirt" />
@@ -232,7 +227,6 @@
             </div>
           </div>
         </div>
-
         <div class="cart-summary">
           <h2>Order Summary</h2>
           <div class="summary-details">
@@ -259,7 +253,6 @@
         </div>
       </div>
     </div>
-
     <footer class="main-footer">
       <div class="footer-content">
         <div class="footer-column">
@@ -290,13 +283,11 @@
         <p>&copy; 2025 DIVINE. Të gjitha të drejtat e rezervuara.</p>
       </div>
     </footer>
-
     <script>
       // Hamburger Menu Toggle
       const hamburgerMenu = document.querySelector(".hamburger-menu");
       const navLinks = document.querySelector(".nav-links");
       const hamburgerIcon = hamburgerMenu?.querySelector("i");
-
       if (hamburgerMenu && navLinks && hamburgerIcon) {
         hamburgerMenu.addEventListener("click", () => {
           navLinks.classList.toggle("active");
@@ -308,7 +299,6 @@
             hamburgerIcon.classList.add("fa-bars");
           }
         });
-
         // Close menu when clicking on a link
         const navLinksItems = document.querySelectorAll(".nav-links a");
         navLinksItems.forEach((link) => {
@@ -319,7 +309,6 @@
           });
         });
       }
-
       // Update Quantity
       function updateQuantity(btn, change) {
         const quantitySpan = btn.parentElement.querySelector(".quantity");
@@ -329,7 +318,6 @@
         quantitySpan.textContent = quantity;
         updateTotal();
       }
-
       // Remove Item
       function removeItem(btn) {
         if (
@@ -346,12 +334,10 @@
           }, 300);
         }
       }
-
       // Update Total
       function updateTotal() {
         const items = document.querySelectorAll(".cart-item");
         let subtotal = 0;
-
         items.forEach((item) => {
           const priceText = item.querySelector(".item-price").textContent;
           const price = parseFloat(priceText.replace("€", ""));
@@ -360,9 +346,7 @@
           );
           subtotal += price * quantity;
         });
-
         let shipping = 5.0;
-
         const tax = subtotal * 0.08;
         const total = subtotal + shipping + tax;
         document.querySelector(".subtotal").textContent = `€${subtotal.toFixed(
@@ -378,7 +362,6 @@
         document.querySelector(".tax").textContent = `€${tax.toFixed(2)}`;
         document.querySelector(".total").textContent = `€${total.toFixed(2)}`;
       }
-
       // Update Cart Counter
       function updateCartCounter() {
         const itemCount = document.querySelectorAll(".cart-item").length;
@@ -390,7 +373,6 @@
           }
         }
       }
-
       // Checkout Button
       document.querySelector(".checkout-btn").addEventListener("click", () => {
         const itemCount = document.querySelectorAll(".cart-item").length;
