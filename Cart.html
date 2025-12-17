@@ -284,7 +284,7 @@
       </div>
     </footer>
     <script>
-      // Hamburger Menu Toggle
+      
       const hamburgerMenu = document.querySelector(".hamburger-menu");
       const navLinks = document.querySelector(".nav-links");
       const hamburgerIcon = hamburgerMenu?.querySelector("i");
@@ -299,7 +299,7 @@
             hamburgerIcon.classList.add("fa-bars");
           }
         });
-        // Close menu when clicking on a link
+        
         const navLinksItems = document.querySelectorAll(".nav-links a");
         navLinksItems.forEach((link) => {
           link.addEventListener("click", () => {
@@ -309,7 +309,7 @@
           });
         });
       }
-      // Update Quantity
+      
       function updateQuantity(btn, change) {
         const quantitySpan = btn.parentElement.querySelector(".quantity");
         let quantity = parseInt(quantitySpan.textContent);
@@ -318,7 +318,7 @@
         quantitySpan.textContent = quantity;
         updateTotal();
       }
-      // Remove Item
+      
       function removeItem(btn) {
         if (
           confirm(
@@ -334,7 +334,7 @@
           }, 300);
         }
       }
-      // Update Total
+      
       function updateTotal() {
         const items = document.querySelectorAll(".cart-item");
         let subtotal = 0;
@@ -362,7 +362,7 @@
         document.querySelector(".tax").textContent = `€${tax.toFixed(2)}`;
         document.querySelector(".total").textContent = `€${total.toFixed(2)}`;
       }
-      // Update Cart Counter
+      
       function updateCartCounter() {
         const itemCount = document.querySelectorAll(".cart-item").length;
         const cartCounter = document.querySelector(".cart-counter");
@@ -373,7 +373,7 @@
           }
         }
       }
-      // Checkout Button
+      
       document.querySelector(".checkout-btn").addEventListener("click", () => {
         const itemCount = document.querySelectorAll(".cart-item").length;
         if (itemCount === 0) {
