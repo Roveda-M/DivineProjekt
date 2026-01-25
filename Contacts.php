@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,40 +13,9 @@
     />
   </head>
   <body>
-   
-    <header>
-      <a
-        href="index.html"
-        style="
-          font-size: 24px;
-          font-weight: bold;
-          color: black;
-          text-decoration: none;
-        "
-        class="logo"
-        >DIVINE.</a
-      >
-      <button class="hamburger-menu" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <nav class="right-section">
-        <div class="nav-links">
-          <a href="Index.html">Home</a>
-          <a href="Aboutus.html">About Us</a>
-          <a href="Shop.html">Shop</a>
-          <a href="Contacts.html" class="active">Contact</a>
-        </div>
-        <div class="nav-icons">
-          <a href="Cart.html" class="cart-icon">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span class="cart-counter">6</span>
-          </a>
-          <a href="Login.html" class="account-icon">
-            <i class="fa-regular fa-user"></i>
-          </a>
-        </div>
-      </nav>
-    </header>
+    <?php include 'header.php';
+?>
+    
 
    
     <div class="contact-container">
@@ -55,7 +25,7 @@
       </p>
 
       <div class="contact-content">
-        <form action="contact_process.html" method="POST">
+        <form id="contactForm" action="contact_process.php" method="POST">
           <div class="form-group">
             <label for="name">Full Name</label>
             <input
@@ -114,39 +84,7 @@
     </div>
 
     
-    <footer class="main-footer">
-          <div class="footer-content">
-            <div class="footer-column">
-              <h3>DIVINE.</h3>
-              <p>Rroba me stil për Femra,
-                 Meshkuj. Blej thjesht.
-                  Vesh me klas.</p>
-              </div>
-              <div class="footer-column">
-                <h4>Menu</h4>
-                <ul>
-                  <li><a href="Index.html">Home</a></li>
-                  <li><a href="Aboutus.html">About us</a></li>
-                  <li><a href="Shop.html">Shop</a></li>
-                  <li><a href="Contacts.html">Contact</a></li>
-                </ul>
-              </div>
-              <div class="footer-column">
-                <h4>Kontakti</h4>
-                <p><strong>Email:</strong>Divine@gmail.com</p>
-                 <p><strong>Tel:</strong>+383 00 000 000</p>
-                 <div class="socials">
-                  <a href="https://www.instagram.com/">Instagram</a>
-                  <a href="https://www.facebook.com/">Facebook</a>
-                  <a href="https://www.tiktok.com/">TikTok</a>
-                 </div>
-              </div>
-            </div>
-            <div class="footer-bottom">
-            <p>&copy; 2025 DIVINE. Të gjitha të drejtat e rezervuara.</p>
-           </div>
-          
-        </footer>
+   
 
     <script>
       
@@ -174,6 +112,61 @@
           hamburgerIcon.classList.add("fa-bars");
         });
       });
+
+      const form=document.getElementById("contactForm");
+      const name=document.getElementById("name");
+      const email=document.getElementById("email");
+      const subject=document.getElementById("subject");
+      const message=document.getElementById("message");
+
+
+    
+const emailValid = (email) => {
+  const emailRegex = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
+  return emailRegex.test(email.toLowerCase());
+};
+
+// Validimi bëhet kur user klik "Send Message"
+form.addEventListener("submit", function(e) {
+
+  if(name.value.trim() === ""){
+    alert("Ju lutem shtoni emrin e plotë");
+    name.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(email.value.trim() === ""){
+    alert("Ju lutem shtoni emailin");
+    email.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(!emailValid(email.value)){
+    alert("Ju lutem shtoni një email të vlefshëm");
+    email.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(subject.value.trim() === ""){
+    alert("Ju lutem plotësoni subjectin");
+    subject.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(message.value.trim() === ""){
+    alert("Ju lutem shtoni mesazhin");
+    message.focus();
+    e.preventDefault();
+    return;
+  }
+
+
+});
     </script>
+      <?php include 'footer.php';?>
   </body>
 </html>

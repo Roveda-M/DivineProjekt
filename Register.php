@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,33 +12,14 @@
     />
   </head>
   <body>
-    <header>
-      <a
-        href="index.html"
-        style="
-          font-size: 24px;
-          font-weight: bold;
-          color: black;
-          text-decoration: none;
-        "
-        class="logo"
-        >DIVINE.</a
-      >
-      <button class="hamburger-menu" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <nav class="right-section">
-        <div class="nav-links">
-          <a href="Index.html">Home</a>
-          <a href="Aboutus.html">About Us</a>
-          <a href="Shop.html">Shop</a>
-          <a href="Contacts.html">Contact</a>
-        </div>
-      </nav>
-    </header>
+    
+ <?php include 'header1.php';
+
+?>
+
     <div class="login-container">
       <h2>Create Your Account</h2>
-      <form action="register_process.html" method="POST">
+      <form id="registerform" action="register_process.php" method="POST">
         <div class="form-group">
           <label for="fullname">Full Name</label>
           <input
@@ -89,7 +71,7 @@
           />
         </div>
         <button type="submit">Register</button>
-        <p>Already have an account? <a href="login.html">Login</a></p>
+        <p>Already have an account? <a href="login.php">Login</a></p>
       </form>
       <div class="divider"><span>OR</span></div>
       <div class="social-login">
@@ -104,36 +86,8 @@
         </button>
       </div>
     </div>
-    <footer class="main-footer">
-      <div class="footer-content">
-        <div class="footer-column">
-          <h3>DIVINE.</h3>
-          <p>Rroba me stil për Femra, Meshkuj. Blej thjesht. Vesh me klas.</p>
-        </div>
-        <div class="footer-column">
-          <h4>Menu</h4>
-          <ul>
-            <li><a href="Index.html">Home</a></li>
-            <li><a href="Aboutus.html">About us</a></li>
-            <li><a href="Shop.html">Shop</a></li>
-            <li><a href="Contacts.html">Contact</a></li>
-          </ul>
-        </div>
-        <div class="footer-column">
-          <h4>Kontakti</h4>
-          <p><strong>Email:</strong>Divine@gmail.com</p>
-          <p><strong>Tel:</strong>+383 00 000 000</p>
-          <div class="socials">
-            <a href="https://www.instagram.com/">Instagram</a>
-            <a href="https://www.facebook.com/">Facebook</a>
-            <a href="https://www.tiktok.com/">TikTok</a>
-          </div>
-        </div>
-      </div>
-      <div class="footer-bottom">
-        <p>&copy; 2025 DIVINE. Të gjitha të drejtat e rezervuara.</p>
-      </div>
-    </footer>
+    
+
     <script>
       
       const hamburgerMenu = document.querySelector(".hamburger-menu");
@@ -158,6 +112,73 @@
           hamburgerIcon.classList.add("fa-bars");
         });
       });
+const form=document.getElementById("registerform");
+const fullname=document.getElementById("fullname");
+const email =document.getElementById("email");
+const username=document.getElementById("username");
+const password=document.getElementById("password");
+const confirm =document.getElementById("confirm-password");
+
+form.addEventListener("submit", function(e) {
+
+  if(fullname.value.trim() === ""){
+    alert("Ju lutem shtoni emrin e plote.");
+    fullname.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(email.value.trim() === ""){
+    alert("Ju lutem shtoni emailin.");
+    email.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(!emailValid(email.value)){
+    alert("Ju lutem shtoni nje email te vlefshem.");
+    email.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(username.value.trim() === ""){
+    alert("Ju lutem shtoni username.");
+    username.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(password.value.trim() === ""){
+    alert("Ju lutem shtoni password.");
+    password.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(confirm.value.trim() === ""){
+    alert("Ju lutem konfirmoni password-in.");
+    confirm.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(password.value !== confirm.value){
+    alert("Password dhe Confirm Password nuk perputhen.");
+    confirm.focus();
+    e.preventDefault();
+    return;
+  }
+
+ 
+    alert("Password-i duhet të kete te pakten 6 karaktere.");
+    password.focus();
+    e.preventDefault();
+    return;
+  }
+
+});
     </script>
+     <?php include 'footer.php';?>
   </body>
 </html>

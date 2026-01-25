@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,33 +13,13 @@
     />
   </head>
   <body>
-    <header>
-      <a
-        href="index.html"
-        style="
-          font-size: 24px;
-          font-weight: bold;
-          color: black;
-          text-decoration: none;
-        "
-        >DIVINE.</a
-      >
-      <button class="hamburger-menu" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <nav class="right-section">
-        <div class="nav-links">
-          <a href="Index.html">Home</a>
-          <a href="Aboutus.html">About Us</a>
-          <a href="Shop.html">Shop</a>
-          <a href="Contacts.html">Contact</a>
-        </div>
-      </nav>
-    </header>
+     <?php include 'header1.php';
+   
+?>
 
     <div class="login-container">
       <h2>Login to Your Account</h2>
-      <form action="login_process.html" method="POST">
+      <form  id="LoginForm"action="login_process.php" method="POST">
         <div class="form-group">
           <label for="email">Email</label>
           <input
@@ -60,7 +41,7 @@
           />
         </div>
         <button type="submit">Login</button>
-        <p>Don't have an account? <a href="register.html">Sign up</a></p>
+        <p>Don't have an account? <a href="register.php">Sign up</a></p>
       </form>
 
       <div class="divider"><span>OR</span></div>
@@ -78,39 +59,7 @@
       </div>
     </div>
 
-    <footer class="main-footer">
-          <div class="footer-content">
-            <div class="footer-column">
-              <h3>DIVINE.</h3>
-              <p>Rroba me stil për Femra,
-                 Meshkuj. Blej thjesht.
-                  Vesh me klas.</p>
-              </div>
-              <div class="footer-column">
-                <h4>Menu</h4>
-                <ul>
-                  <li><a href="Index.html">Home</a></li>
-                  <li><a href="Aboutus.html">About us</a></li>
-                  <li><a href="Shop.html">Shop</a></li>
-                  <li><a href="Contacts.html">Contact</a></li>
-                </ul>
-              </div>
-              <div class="footer-column">
-                <h4>Kontakti</h4>
-                <p><strong>Email:</strong>Divine@gmail.com</p>
-                 <p><strong>Tel:</strong>+383 00 000 000</p>
-                 <div class="socials">
-                  <a href="https://www.instagram.com/">Instagram</a>
-                  <a href="https://www.facebook.com/">Facebook</a>
-                  <a href="https://www.tiktok.com/">TikTok</a>
-                 </div>
-              </div>
-            </div>
-            <div class="footer-bottom">
-            <p>&copy; 2025 DIVINE. Të gjitha të drejtat e rezervuara.</p>
-           </div>
-          
-        </footer>
+    
 
     <script>
       // Hamburger Menu Toggle
@@ -138,6 +87,46 @@
           hamburgerIcon.classList.add("fa-bars");
         });
       });
+
+
+ 
+      const form=document.getElementById("LoginForm");
+     
+      const email=document.getElementById("email");
+      const password=document.getElementById("password");
+     
+
+
+    
+const emailValid = (email) => {
+  const emailRegex = /^([A-Za-z0-9_\-.])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,4})$/;
+  return emailRegex.test(email.toLowerCase());
+};
+
+// Validimi bëhet kur user klik "Send Message"
+form.addEventListener("submit", function(e) {
+
+ if(email.value.trim() === ""){
+    alert("Ju lutem shtoni emailin");
+    email.focus();
+    e.preventDefault();
+    return;
+  }
+
+  if(!emailValid(email.value)){
+    alert("Ju lutem shtoni një email të vlefshëm");
+    email.focus();
+    e.preventDefault();
+    return;
+  }
+  if(password.value.trim()===""){
+    alert("fjalkalimi eshte i zbrazet");
+    password.focus();
+    e.preventDefault();
+    return;
+  }
+});
     </script>
+      <?php include 'footer.php';?>
   </body>
 </html>

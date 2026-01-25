@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -12,38 +13,8 @@
     <link rel="stylesheet" href="cart.css" />
   </head>
   <body>
-    <header>
-      <a
-        href="Index.html"
-        style="
-          font-size: 24px;
-          font-weight: bold;
-          color: black;
-          text-decoration: none;
-        "
-        >DIVINE.</a
-      >
-      <button class="hamburger-menu" aria-label="Toggle menu">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <nav class="right-section">
-        <div class="nav-links">
-          <a href="Index.html">Home</a>
-          <a href="Aboutus.html">About Us</a>
-          <a href="Shop.html">Shop</a>
-          <a href="Contacts.html">Contact</a>
-        </div>
-        <div class="nav-icons">
-          <a href="Cart.html" class="cart-icon">
-            <i class="fa-solid fa-bag-shopping"></i>
-            <span class="cart-counter">6</span>
-          </a>
-          <a href="Login.html" class="account-icon">
-            <i class="fa-regular fa-user"></i>
-          </a>
-        </div>
-      </nav>
-    </header>
+     <?php include 'header.php';
+?>
     <div class="shop-container">
       <h1>Shopping Cart</h1>
       <div class="cart-content">
@@ -254,39 +225,7 @@
         </div>
       </div>
     </div>
-    <footer class="main-footer">
-          <div class="footer-content">
-            <div class="footer-column">
-              <h3>DIVINE.</h3>
-              <p>Rroba me stil për Femra,
-                 Meshkuj. Blej thjesht.
-                  Vesh me klas.</p>
-              </div>
-              <div class="footer-column">
-                <h4>Menu</h4>
-                <ul>
-                  <li><a href="Index.html">Home</a></li>
-                  <li><a href="Aboutus.html">About us</a></li>
-                  <li><a href="Shop.html">Shop</a></li>
-                  <li><a href="Contacts.html">Contact</a></li>
-                </ul>
-              </div>
-              <div class="footer-column">
-                <h4>Kontakti</h4>
-                <p><strong>Email:</strong>Divine@gmail.com</p>
-                 <p><strong>Tel:</strong>+383 00 000 000</p>
-                 <div class="socials">
-                  <a href="https://www.instagram.com/">Instagram</a>
-                  <a href="https://www.facebook.com/">Facebook</a>
-                  <a href="https://www.tiktok.com/">TikTok</a>
-                 </div>
-              </div>
-            </div>
-            <div class="footer-bottom">
-            <p>&copy; 2025 DIVINE. Të gjitha të drejtat e rezervuara.</p>
-           </div>
-          
-        </footer>
+
     <script>
       
       const hamburgerMenu = document.querySelector(".hamburger-menu");
@@ -387,5 +326,6 @@
         }
       });
     </script>
+     <?php include 'footer.php';?>
   </body>
 </html>
