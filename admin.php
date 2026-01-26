@@ -378,7 +378,7 @@
                         </div>
                         <div class="form-group">
                             <label>Adresa</label>
-                            <textarea rows="3">Prishtina, Kosovo</textarea>
+                            <textarea rows="3">Ferizaj, Kosovo</textarea>
                         </div>
                         <button type="submit" class="btn-primary">Ruaj Ndryshimet</button>
                     </form>
