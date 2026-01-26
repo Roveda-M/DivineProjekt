@@ -1,0 +1,69 @@
+/* Main wrapper për profile */
+.main-content {
+    display: flex;               /* aktivizon flexbox */
+    justify-content: center;     /* centron horizontal */
+    align-items: center;         /* centron vertikal */
+    min-height: calc(100vh - 100px); /* llogarit lartësinë e faqes minus header+footer, rregullo sipas faqes */
+    background-color: #f4f6f8;   /* sfondi i faqes */
+    padding: 20px;
+}
+
+/* Profile Card */
+.profile-card {
+    background-color: #ffffff;
+    width: 350px;
+    padding: 30px 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Avatar */
+.profile-avatar {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 20px;
+    border-radius: 50%;
+    background-color: #e0e0e0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: #555;
+}
+
+/* Emri dhe email */
+.profile-name {
+    font-size: 22px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 10px;
+}
+
+.profile-email {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* Logout button */
+.btn-logout {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: #4CAF50;
+    color: #fff;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-logout:hover {
+    background-color: #45a049;
+}

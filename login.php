@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -130,3 +129,4 @@ form.addEventListener("submit", function(e) {
       <?php include 'footer.php';?>
   </body>
 </html>
+

@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['user_id'])){
+    header("Location: login.php");
+    exit;
+}
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,8 +23,11 @@
     <link rel="stylesheet" href="style1.css" />
   </head>
   <body>
-   <?php include 'header.php';
-?>
+    
+    
+<?php include 'header.php'; ?>
+
+
     <br />
     <video class="responsive-video" autoplay muted loop>
       <source src="homeVideo/v1.mp4" type="video/mp4" />

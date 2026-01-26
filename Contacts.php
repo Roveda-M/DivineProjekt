@@ -1,4 +1,12 @@
+<?php
+session_start();
 
+// Kontrollo nëse përdoruesi është loguar
+if(!isset($_SESSION['user_id'])){
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,7 +33,8 @@
       </p>
 
       <div class="contact-content">
-        <form id="contactForm" action="contact_process.php" method="POST">
+<form id="contactForm" action="contacts_process.php" method="POST">
+
           <div class="form-group">
             <label for="name">Full Name</label>
             <input

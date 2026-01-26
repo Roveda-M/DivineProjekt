@@ -1,4 +1,12 @@
+<?php
+session_start();
 
+// Kontrollo nëse përdoruesi është loguar
+if(!isset($_SESSION['user_id'])){
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

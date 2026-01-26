@@ -1,4 +1,12 @@
+<?php
+session_start();
 
+// Kontrollo nëse përdoruesi është loguar
+if(!isset($_SESSION['user_id'])){
+    header("Location: login.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -30,16 +38,7 @@
             required
           />
         </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="you@example.com"
-            required
-          />
-        </div>
+     
         <div class="form-group">
           <label for="username">Username</label>
           <input
@@ -47,6 +46,16 @@
             id="username"
             name="username"
             placeholder="Username"
+            required
+          />
+        </div>
+           <div class="form-group">
+          <label for="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="you@example.com"
             required
           />
         </div>
@@ -114,10 +123,16 @@
       });
 const form=document.getElementById("registerform");
 const fullname=document.getElementById("fullname");
-const email =document.getElementById("email");
 const username=document.getElementById("username");
+const email =document.getElementById("email");
 const password=document.getElementById("password");
 const confirm =document.getElementById("confirm-password");
+
+
+function emailValid(email) {
+  const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return re.test(email);
+}
 
 form.addEventListener("submit", function(e) {
 
@@ -170,12 +185,13 @@ form.addEventListener("submit", function(e) {
     return;
   }
 
- 
+ if(password.value.length<6){
     alert("Password-i duhet të kete te pakten 6 karaktere.");
     password.focus();
     e.preventDefault();
     return;
   }
+
 
 });
     </script>

@@ -1,6 +1,7 @@
 <?php
  include_once 'config/db.php';
 include_once 'User.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new Database();
     $connection = $db->getConnection();
@@ -8,12 +9,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Get form data
     $fullname = $_POST['fullname'];
-    $email = $_POST['email'];
     $username = $_POST['username'];
+     $email = $_POST['email'];
     $password = $_POST['password'];
 
+
+    if($user->isUserExists($email,$username)){
+      echo"ky email ose username egzistone tashme!";
+      exit;
+    }
     // Register the user
-    if ($user->register($fullname,  $email, $username, $password)) {
+    if ($user->register($fullname,  $username, $email, $password)) {
         header("Location: login.php"); // Redirect to login page
         exit;
     } else {
@@ -21,3 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
+
+
+

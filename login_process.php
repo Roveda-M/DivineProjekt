@@ -1,7 +1,8 @@
 <?php
-  session_start();
+ session_start();
 include_once 'config/db.php';
 include_once 'User.php';
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $db = new Database();
     $connection = $db->getConnection();
@@ -10,6 +11,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     // Get form data
     $email = $_POST['email'];
     $password = $_POST['password'];
+  
+ 
 
     // Attempt to log in
     if ($user->login($email, $password)) {
@@ -20,3 +23,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 ?>
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+    
+
+
+
+
+ 
