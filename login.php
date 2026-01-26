@@ -40,7 +40,7 @@
           />
         </div>
         <button type="submit">Login</button>
-        <p>Don't have an account? <a href="register.php">Sign up</a></p>
+        <p>Don't have an account? <a href="Register.php">Sign up</a></p>
       </form>
 
       <div class="divider"><span>OR</span></div>

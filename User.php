@@ -42,7 +42,7 @@ if($stmt->execute()){
     }
 
  public function login($email, $password) {
-        $query = "SELECT id, email, password FROM {$this->table} WHERE email = :email";
+        $query = "SELECT id,  email, password FROM {$this->table} WHERE email = :email";
  $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':email', $email);
@@ -55,6 +55,7 @@ if($stmt->execute()){
                 // Start the session and store user data
                 session_start();
                 $_SESSION['user_id'] = $row['id'];
+                   $_SESSION['fullname'] = $row['fullname'];
                 $_SESSION['email'] = $row['email'];
                 return true;
             }
@@ -70,3 +71,5 @@ if($stmt->execute()){
 
     
 
+
+    

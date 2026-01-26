@@ -3,7 +3,6 @@ if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
 ?>
-
 <header>
   <a href="Index.php" style="font-size:24px;font-weight:bold;text-decoration:none;">
     DIVINE.
@@ -19,21 +18,16 @@ if (session_status() === PHP_SESSION_NONE) {
       <a href="Aboutus.php">About Us</a>
       <a href="Shop.php">Shop</a>
       <a href="Contacts.php">Contact</a>
-    </div>
 
-    <div class="nav-icons">
-      <!-- IKONA E PROFILIT -->
-      <?php if (isset($_SESSION['user_id'])): ?>
-        <a href="profile.php" class="account-icon">
-          <i class="fa-regular fa-user"></i>
-        </a>
+      <?php if (!isset($_SESSION['user_id'])): ?>
+        <a href="login.php">Login</a>
+        <a href="Register.php">Register</a>
       <?php else: ?>
-        <a href="login.php" class="account-icon">
-          <i class="fa-regular fa-user"></i>
-        </a>
+    
+       
       <?php endif; ?>
     </div>
 
+
   </nav>
 </header>
-
