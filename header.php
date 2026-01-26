@@ -14,27 +14,45 @@ if (session_status() === PHP_SESSION_NONE) {
 
   <nav class="right-section">
     <div class="nav-links">
+      
       <a href="Index.php">Home</a>
       <a href="Aboutus.php">About Us</a>
       <a href="Shop.php">Shop</a>
       <a href="Contacts.php">Contact</a>
 
-      <?php if (!isset($_SESSION['user_id'])): ?>
+      <?php if (isset($_SESSION['user_id'])): ?>
+       
+        
+        <?php if (isset($_SESSION['role']) && $_SESSION['role'] == 1): ?>
+          
+          <a href="/DivineProjekt/admin.php">Admin Panel</a>
+        <?php endif; ?>
+        
+      <?php else: ?>
+        
         <a href="login.php">Login</a>
         <a href="Register.php">Register</a>
-      <?php else: ?>
-      
-        
       <?php endif; ?>
     </div>
 
     <div class="nav-icons">
-      <a href="Cart.php" class="cart-icon">
-        <i class="fa-solid fa-bag-shopping"></i>
-      </a>
-      <a href="profile.php" class="account-icon">
-        <i class="fa-regular fa-user"></i>
-      </a>
+      <?php if (isset($_SESSION['user_id'])): ?>
+      
+        <a href="Cart.php" class="cart-icon">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+        <a href="profile.php" class="account-icon">
+          <i class="fa-regular fa-user"></i>
+        </a>
+      <?php else: ?>
+        
+        <a href="login.php" class="cart-icon">
+          <i class="fa-solid fa-bag-shopping"></i>
+        </a>
+        <a href="login.php" class="account-icon">
+          <i class="fa-regular fa-user"></i>
+        </a>
+      <?php endif; ?>
     </div>
   </nav>
 </header>

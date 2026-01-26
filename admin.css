@@ -413,7 +413,6 @@ table tbody tr:last-child td {
     border-color: var(--primary-color);
 }
 
-
 @media (max-width: 768px) {
     .admin-sidebar {
         transform: translateX(-100%);
