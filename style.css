@@ -6,10 +6,10 @@
 }
 
 html {
-  overflow-y: scroll; /* mbaj gjithmone scrollbar vertikal qe headeri mos levize */
+  overflow-y: scroll; 
 }
 
-/* Trupi i faqes */
+
 body {
   height: 100vh;
   margin: 0;
@@ -37,7 +37,7 @@ header.hide {
   transform: translateY(-100%);
 }
 
-/* LOGO majtas */
+
 .logo {
   order: 1;
   font-size: 24px;
@@ -105,7 +105,7 @@ header.hide {
   color: #000;
 }
 
-/* Hamburger Menu Button */
+
 .hamburger-menu {
   display: none;
   background: none;
@@ -127,7 +127,7 @@ footer {
   color: white;
   text-align: center;
   padding: 20px;
-  margin-top: auto; /* Kjo bën që footeri të shkojë gjithmonë në fund të faqes */
+  margin-top: auto; 
 }
 
 .main-footer {
@@ -232,9 +232,7 @@ footer {
   font-size: 12px;
   font-weight: bold;
 }
-/* ========== RESPONSIVE DESIGN ========== */
 
-/* Tablet Styles (768px - 1024px) */
 @media (max-width: 1024px) {
   header {
     padding: 18px 30px;
@@ -254,7 +252,7 @@ footer {
   }
 }
 
-/* Mobile/Phone Styles (up to 768px) */
+
 @media (max-width: 768px) {
   header {
     padding: 15px 20px;
@@ -378,7 +376,7 @@ footer {
   font-size: 20px;
 }
 
-/* Small Mobile (up to 480px) */
+
 @media (max-width: 480px) {
   header {
     padding: 12px 15px;
