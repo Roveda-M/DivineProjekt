@@ -7,6 +7,22 @@
     <link rel="stylesheet" href="admin.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
+<?php
+session_start();
+
+if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 1) {
+    header("Location: login.php");
+    exit;
+}
+
+include_once 'config/db.php';
+include_once 'Product.php';
+
+$db = new Database();
+$connection = $db->getConnection();
+$productObj = new Product($connection);
+$products = $productObj->getAllProducts();
+?>
 <body>
     <div class="admin-wrapper">
         
@@ -152,26 +168,26 @@
                                     <th>Status</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <tr>
-                                    <td>#ORD-001</td>
-                                    <td>John Doe</td>
-                                    <td>€99.99</td>
-                                    <td><span class="badge success">Përfunduar</span></td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-002</td>
-                                    <td>Jane Smith</td>
-                                    <td>€149.50</td>
-                                    <td><span class="badge info">Në Proces</span></td>
-                                </tr>
-                                <tr>
-                                    <td>#ORD-003</td>
-                                    <td>Mike Johnson</td>
-                                    <td>€79.99</td>
-                                    <td><span class="badge warning">Në Pritje</span></td>
-                                </tr>
-                            </tbody>
+<tbody>
+    <tr>
+        <td>#ORD-001</td>
+        <td>John Doe</td>
+        <td>€99.99</td>
+        <td><span class="badge success">Përfunduar</span></td>
+    </tr>
+    <tr>
+        <td>#ORD-002</td>
+        <td>Jane Smith</td>
+        <td>€149.50</td>
+        <td><span class="badge info">Në Proces</span></td>
+    </tr>
+    <tr>
+        <td>#ORD-003</td>
+        <td>Mike Johnson</td>
+        <td>€79.99</td>
+        <td><span class="badge warning">Në Pritje</span></td>
+    </tr>
+</tbody>
                         </table>
                     </div>
                 </div>
@@ -240,9 +256,9 @@
             <div id="products-page" class="page-content">
                 <div class="page-header">
                     <h2>Menaxhim Produktesh</h2>
-                    <button class="btn-primary">
-                        <i class="fas fa-plus"></i> Shto Produkt
-                    </button>
+                    <a href="products_add.php" class="btn-primary">
+    <i class="fas fa-plus"></i> Shto Produkt
+</a>
                 </div>
                 <div class="content-card">
                     <table>
@@ -257,44 +273,30 @@
                                 <th>Veprime</th>
                             </tr>
                         </thead>
-                        <tbody>
-                            <tr>
-                                <td>#001</td>
-                                <td>Crop Tank T-shirt</td>
-                                <td>Femra</td>
-                                <td>€9.99</td>
-                                <td>25</td>
-                                <td><span class="badge success">Në Stok</span></td>
-                                <td>
-                                    <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-icon danger" title="Fshi"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#002</td>
-                                <td>Zip-up Hoodie</td>
-                                <td>Femra</td>
-                                <td>€14.99</td>
-                                <td>15</td>
-                                <td><span class="badge success">Në Stok</span></td>
-                                <td>
-                                    <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-icon danger" title="Fshi"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#003</td>
-                                <td>T-shirt</td>
-                                <td>Meshkuj</td>
-                                <td>€17.99</td>
-                                <td>0</td>
-                                <td><span class="badge danger">Jashtë Stokut</span></td>
-                                <td>
-                                    <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-icon danger" title="Fshi"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                        </tbody>
+                       <tbody>
+    <?php foreach ($products as $product): ?>
+    <tr>
+        <td>#<?= str_pad($product['id'], 3, '0', STR_PAD_LEFT) ?></td>
+        <td><?= htmlspecialchars($product['name']) ?></td>
+        <td><?= htmlspecialchars($product['category']) ?></td>
+        <td>€<?= number_format($product['price'], 2) ?></td>
+        <td><?= $product['stock'] ?></td>
+        <td>
+            <span class="badge <?= $product['stock'] > 0 ? 'success' : 'danger' ?>">
+                <?= $product['stock'] > 0 ? 'Në Stok' : 'Jashtë Stokut' ?>
+            </span>
+        </td>
+        <td>
+            <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
+            <a href="products_delete.php?id=<?= $product['id'] ?>" 
+               onclick="return confirm('A jeni të sigurt që dëshironi ta fshini këtë produkt?');"
+               class="btn-icon danger" title="Fshi">
+                <i class="fas fa-trash"></i>
+            </a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</tbody>
                     </table>
                 </div>
             </div>
@@ -422,6 +424,23 @@
             menuToggle.addEventListener('click', () => {
                 sidebar.classList.toggle('mobile-open');
             });
+        }
+
+        // Shfaq faqen e specifikuar nga URL (p.sh. pas fshirjes)
+        const urlParams = new URLSearchParams(window.location.search);
+        const pageParam = urlParams.get('page');
+        if (pageParam && pageTitles[pageParam]) {
+            navItems.forEach(nav => nav.classList.remove('active'));
+            const targetNav = document.querySelector(`.nav-item[data-page="${pageParam}"]`);
+            if (targetNav) {
+                targetNav.classList.add('active');
+            }
+            pages.forEach(p => p.classList.remove('active'));
+            const targetPage = document.getElementById(`${pageParam}-page`);
+            if (targetPage) {
+                targetPage.classList.add('active');
+            }
+            pageTitle.textContent = pageTitles[pageParam];
         }
     </script>
 </body>

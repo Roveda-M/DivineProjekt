@@ -6,6 +6,14 @@ if(!isset($_SESSION['user_id'])){
     header("Location: login.php");
     exit;
 }
+
+include_once 'config/db.php';
+include_once 'Product.php';
+
+$db = new Database();
+$connection = $db->getConnection();
+$productObj = new Product($connection);
+$products = $productObj->getAllProducts();
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -34,7 +42,7 @@ if(!isset($_SESSION['user_id'])){
             <i class="fa-solid fa-venus"></i>
             Femra
           </a>
-          <a href="#" data-filter="man">
+          <a href="#" data-filter="Meshkuj">
             <i class="fa-solid fa-mars"></i>
             Meshkuj
           </a>
@@ -47,100 +55,15 @@ if(!isset($_SESSION['user_id'])){
     </div>
 
     <div class="product-container">
-      <div class="product-card" data-category="femra">
-        <img src="imgF/p1.png" alt="Foto Femra" />
-        <h2>Crop Tank T-shirt</h2>
-        <p>€9.99</p>
-        <div class="product-info"><p>F</p></div>
+      <?php foreach ($products as $product): ?>
+      <div class="product-card" data-category="<?= htmlspecialchars($product['category']) ?>">
+        <img src="<?= htmlspecialchars($product['image_path']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" />
+        <h2><?= htmlspecialchars($product['name']) ?></h2>
+        <p>€<?= number_format($product['price'], 2) ?></p>
+        <div class="product-info"><p><?= $product['category'] == 'femra' ? 'F' : 'M' ?></p></div>
         <button>Shto në Shportë</button>
       </div>
-      <div class="product-card" data-category="femra">
-        <img src="imgF/p2.png" alt="Foto Femra" />
-        <h2>Zip-up Hoodie</h2>
-        <p>€14.99</p>
-        <div class="product-info"><p>F</p></div>
-        <button>Shto në Shportë</button>
-      </div>
-
-      <div class="product-card" data-category="femra">
-        <img src="imgF/p3.png" alt="Foto Femra" />
-        <h2>Crop T-shirt</h2>
-        <p>€9.99</p>
-        <div class="product-info"><p>F</p></div>
-        <button>Shto në Shportë</button>
-      </div>
-
-      <div class="product-card" data-category="femra">
-        <img src="imgF/p4.png" alt="Foto Femra" />
-        <h2>Jacket</h2>
-        <p>€19.99</p>
-        <div class="product-info"><p>F</p></div>
-        <button>Shto në Shportë</button>
-      </div>
-
-      <div class="product-card" data-category="femra">
-        <img src="imgF/p5.png" alt="Foto Femra" />
-        <h2>T-shirt</h2>
-        <p>€12.99</p>
-        <div class="product-info"><p>F</p></div>
-        <button>Shto në Shportë</button>
-      </div>
-
-      <div class="product-card" data-category="femra">
-        <img src="imgF/p6.png" alt="Foto Femra" />
-        <h2>Blouse</h2>
-        <p>€12.99</p>
-        <div class="product-info"><p>F</p></div>
-        <button>Shto në Shportë</button>
-      </div>
-
-      <div class="product-card" data-category="man">
-        <img src="imgM/p7.png" alt="Foto Meshkuj" />
-        <h2>T-shirt</h2>
-        <p>€17.99</p>
-        <div class="product-info"><p>M</p></div>
-        <button>Shto në Shportë</button>
-      </div>
-
-      <div class="product-card" data-category="man">
-        <img src="imgM/p8.png" alt="Foto Meshkuj" />
-        <h2>T-shirt</h2>
-        <p>€14.99</p>
-        <div class="product-info"><p>M</p></div>
-        <button>Shto në Shportë</button>
-      </div>
-
-      <div class="product-card" data-category="man">
-        <img src="imgM/p9.png" alt="Foto Meshkuj" />
-        <h2>Zip-up Hoodie</h2>
-        <p>€19.99</p>
-        <div class="product-info"><p>M</p></div>
-        <button>Shto në Shportë</button>
-      </div>
-
-      <div class="product-card" data-category="man">
-        <img src="imgM/p10.png" alt="Foto Meshkuj" />
-        <h2>Jacket</h2>
-        <p>€22.99</p>
-        <div class="product-info"><p>M</p></div>
-        <button>Shto në Shportë</button>
-      </div>
-
-      <div class="product-card" data-category="man">
-        <img src="imgM/p11.png" alt="Foto Meshkuj" />
-        <h2>Hoodie</h2>
-        <p>€19.99</p>
-        <div class="product-info"><p>M</p></div>
-        <button>Shto në Shportë</button>
-      </div>
-
-      <div class="product-card" data-category="man">
-        <img src="imgM/p12.png" alt="Foto Meshkuj" />
-        <h2>T-shirt</h2>
-        <p>€14.99</p>
-        <div class="product-info"><p>M</p></div>
-        <button>Shto në Shportë</button>
-      </div>
+      <?php endforeach; ?>
     </div>
 
     <!--Slider-->
