@@ -249,20 +249,20 @@ $phone = isset($_SESSION['phone']) ? $_SESSION['phone'] : '';
           <div class="wishlist-grid">
             <div class="wishlist-item">
               <button class="remove-wishlist"><i class="fas fa-times"></i></button>
-              <img src="homecoll/i3.png" alt="Product" />
+              <img src="imgF/p5.png" alt="Product" />
               <div class="wishlist-info">
-                <h4>Divine Jacket</h4>
-                <p class="wishlist-price">€120.00</p>
+                <h4>Divine T-Shirt</h4>
+                <p class="wishlist-price">€20.00</p>
                 <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
               </div>
             </div>
             
             <div class="wishlist-item">
               <button class="remove-wishlist"><i class="fas fa-times"></i></button>
-              <img src="homecoll/i7.png" alt="Product" />
+              <img src="imgM/p8.png" alt="Product" />
               <div class="wishlist-info">
-                <h4>Divine Pants</h4>
-                <p class="wishlist-price">€95.00</p>
+                <h4>Divine T-Shirt</h4>
+                <p class="wishlist-price">€25.00</p>
                 <button class="btn-add-cart"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
               </div>
             </div>

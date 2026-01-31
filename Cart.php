@@ -229,7 +229,7 @@ if(!isset($_SESSION['user_id'])){
             </div>
           </div>
           <button class="checkout-btn">Proceed to Checkout</button>
-          <a href="Shop.html" class="continue-shopping">Continue Shopping</a>
+          <a href="Shop.php" class="continue-shopping">Continue Shopping</a>
         </div>
       </div>
     </div>
