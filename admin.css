@@ -359,6 +359,11 @@ table tbody tr:last-child td {
     box-shadow: 0 4px 8px rgba(99, 102, 241, 0.3);
 }
 
+a.btn-primary {
+    text-decoration: none;
+    color: white;
+}
+
 .btn-icon {
     background: none;
     border: none;
@@ -378,6 +383,13 @@ table tbody tr:last-child td {
 .btn-icon.danger:hover {
     background: #fee2e2;
     color: var(--danger-color);
+}
+
+a.btn-icon {
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
 }
 
 

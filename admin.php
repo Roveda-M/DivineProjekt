@@ -17,11 +17,21 @@ if (!isset($_SESSION['user_id']) || $_SESSION['role'] != 1) {
 
 include_once 'config/db.php';
 include_once 'Product.php';
+include_once 'User.php';
 
 $db = new Database();
 $connection = $db->getConnection();
 $productObj = new Product($connection);
 $products = $productObj->getAllProducts();
+$userObj = new User($connection);
+try {
+    $users = $userObj->getAllUsers();
+} catch (Exception $e) {
+    $users = [];
+}
+if (!is_array($users)) {
+    $users = [];
+}
 ?>
 <body>
     <div class="admin-wrapper">
@@ -197,9 +207,9 @@ $products = $productObj->getAllProducts();
             <div id="users-page" class="page-content">
                 <div class="page-header">
                     <h2>Menaxhim Përdoruesish</h2>
-                    <button class="btn-primary">
+                    <a href="users_add.php" class="btn-primary" style="text-decoration:none;color:white;">
                         <i class="fas fa-plus"></i> Shto Përdorues
-                    </button>
+                    </a>
                 </div>
                 <div class="content-card">
                     <table>
@@ -214,39 +224,27 @@ $products = $productObj->getAllProducts();
                             </tr>
                         </thead>
                         <tbody>
+                            <?php foreach ($users as $user): ?>
                             <tr>
-                                <td>#001</td>
-                                <td>John Doe</td>
-                                <td>john@example.com</td>
-                                <td>johndoe</td>
-                                <td><span class="badge success">Aktiv</span></td>
+                                <td>#<?= str_pad($user['id'], 3, '0', STR_PAD_LEFT) ?></td>
+                                <td><?= htmlspecialchars($user['fullname']) ?></td>
+                                <td><?= htmlspecialchars($user['email']) ?></td>
+                                <td><?= htmlspecialchars($user['username']) ?></td>
+                                <td>
+                                    <span class="badge <?= $user['role'] == 1 ? 'info' : 'success' ?>">
+                                        <?= $user['role'] == 1 ? 'Admin' : 'Aktiv' ?>
+                                    </span>
+                                </td>
                                 <td>
                                     <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-icon danger" title="Fshi"><i class="fas fa-trash"></i></button>
+                                    <a href="users_delete.php?id=<?= $user['id'] ?>"
+                                       onclick="return confirm('A jeni të sigurt që dëshironi ta fshini këtë përdorues?');"
+                                       class="btn-icon danger" title="Fshi">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
                                 </td>
                             </tr>
-                            <tr>
-                                <td>#002</td>
-                                <td>Jane Smith</td>
-                                <td>jane@example.com</td>
-                                <td>janesmith</td>
-                                <td><span class="badge success">Aktiv</span></td>
-                                <td>
-                                    <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-icon danger" title="Fshi"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>#003</td>
-                                <td>Mike Johnson</td>
-                                <td>mike@example.com</td>
-                                <td>mikejohnson</td>
-                                <td><span class="badge warning">Pezulluar</span></td>
-                                <td>
-                                    <button class="btn-icon" title="Edit"><i class="fas fa-edit"></i></button>
-                                    <button class="btn-icon danger" title="Fshi"><i class="fas fa-trash"></i></button>
-                                </td>
-                            </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
                 </div>

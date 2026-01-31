@@ -39,6 +39,35 @@ class User {
         return false;
     }
 
+    public function getAllUsers() {
+        $query = "SELECT id, fullname, username, email, role FROM {$this->table} ORDER BY id DESC";
+        $stmt = $this->conn->prepare($query);
+        $stmt->execute();
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
+
+    public function addUser($fullname, $username, $email, $password, $role = 0) {
+        if ($this->isUserExists($email, $username)) {
+            return false;
+        }
+        $query = "INSERT INTO {$this->table} (fullname, username, email, password, role) VALUES (:fullname, :username, :email, :password, :role)";
+        $stmt = $this->conn->prepare($query);
+        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        $stmt->bindParam(':fullname', $fullname);
+        $stmt->bindParam(':username', $username);
+        $stmt->bindParam(':email', $email);
+        $stmt->bindParam(':password', $hashedPassword);
+        $stmt->bindParam(':role', $role, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
+    public function deleteUser($id) {
+        $query = "DELETE FROM {$this->table} WHERE id = :id";
+        $stmt = $this->conn->prepare($query);
+        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
+        return $stmt->execute();
+    }
+
     public function login($email, $password) {
         $query = "SELECT id, fullname, username, email, password, role FROM {$this->table} WHERE email = :email";
         $stmt = $this->conn->prepare($query);
