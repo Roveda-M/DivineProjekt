@@ -1,10 +1,10 @@
 <?php
 session_start();
 
-// Fshi të gjitha variablat e session
+// Fshi te gjitha variablat e session
 session_unset();
 
-// Shkatërro sessionin
+// Shkaterro sessionin
 session_destroy();
 
 // Ridrejto te login

@@ -94,7 +94,7 @@ header .logo {
   border-radius: 20px;
   box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin: 40px auto; /* centroje në mes horizontalisht */
+  margin: 40px auto; /* centroje ne mes horizontalisht */
 }
 
 .login-container h2 {
@@ -222,7 +222,7 @@ header .logo {
   padding: 30px 20px 15px;
   width: 100%;
   font-size: 14px;
-  margin-top: auto; /* e shtyn footerin poshtë të faqes */
+  margin-top: auto; /* e shtyn footerin poshte te faqes */
 }
 
 .footer-content {

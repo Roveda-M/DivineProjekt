@@ -102,7 +102,7 @@ const emailValid = (email) => {
   return emailRegex.test(email.toLowerCase());
 };
 
-// Validimi bëhet kur user klik "Send Message"
+// Validimi behet kur user klik "Send Message"
 form.addEventListener("submit", function(e) {
 
  if(email.value.trim() === ""){

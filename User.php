@@ -6,84 +6,57 @@ class User {
     public function __construct($db) {
         $this->conn = $db;
     }
-
-    public function isUserExists($email, $username) {
+public function isUserExists($email, $username) {
         $query = "SELECT id FROM {$this->table} WHERE email = :email OR username = :username";
         $stmt = $this->conn->prepare($query);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':username', $username);
         $stmt->execute();
 
-        return $stmt->rowCount() > 0;
+        return $stmt->rowCount() > 0; // true nese ekziston
     }
 
-    public function register($fullname, $username, $email, $password) {
-        $query = "INSERT INTO {$this->table} (fullname, username, email, password) VALUES (:fullname, :username, :email, :password)";
+
+
+    public function register($fullname,  $username,$email, $password) {
+        $query = "INSERT INTO {$this->table} (fullname, username, email, password) VALUES (:fullname,  :username,:email, :password)";
         $stmt = $this->conn->prepare($query);
 
-        if ($this->isUserExists($email, $username)) {
-            return false;
+         if ($this->isUserExists($email, $username)) {
+            return false; // nuk lejohet regjistrimi
         }
 
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        
+
+ $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+        // Bind parameters
         $stmt->bindParam(':fullname', $fullname);
-        $stmt->bindParam(':username', $username);
+          $stmt->bindParam(':username', $username);
         $stmt->bindParam(':email', $email);
         $stmt->bindParam(':password', $hashedPassword);
-        
-        if($stmt->execute()){
-            return true;
-        }
+if($stmt->execute()){
+ return true;
+}
+
 
         return false;
     }
 
-    public function getAllUsers() {
-        $query = "SELECT id, fullname, username, email, role FROM {$this->table} ORDER BY id DESC";
-        $stmt = $this->conn->prepare($query);
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function addUser($fullname, $username, $email, $password, $role = 0) {
-        if ($this->isUserExists($email, $username)) {
-            return false;
-        }
-        $query = "INSERT INTO {$this->table} (fullname, username, email, password, role) VALUES (:fullname, :username, :email, :password, :role)";
-        $stmt = $this->conn->prepare($query);
-        $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-        $stmt->bindParam(':fullname', $fullname);
-        $stmt->bindParam(':username', $username);
-        $stmt->bindParam(':email', $email);
-        $stmt->bindParam(':password', $hashedPassword);
-        $stmt->bindParam(':role', $role, PDO::PARAM_INT);
-        return $stmt->execute();
-    }
-
-    public function deleteUser($id) {
-        $query = "DELETE FROM {$this->table} WHERE id = :id";
-        $stmt = $this->conn->prepare($query);
-        $stmt->bindParam(':id', $id, PDO::PARAM_INT);
-        return $stmt->execute();
-    }
-
-    public function login($email, $password) {
-        $query = "SELECT id, fullname, username, email, password, role FROM {$this->table} WHERE email = :email";
-        $stmt = $this->conn->prepare($query);
+ public function login($email, $password) {
+        $query = "SELECT id,  email, password FROM {$this->table} WHERE email = :email";
+ $stmt = $this->conn->prepare($query);
 
         $stmt->bindParam(':email', $email);
         $stmt->execute();
 
+        // Check if a record exists
         if ($stmt->rowCount() > 0) {
             $row = $stmt->fetch(PDO::FETCH_ASSOC);
             if (password_verify($password, $row['password'])) {
+                // Start the session and store user data
                 session_start();
                 $_SESSION['user_id'] = $row['id'];
-                $_SESSION['fullname'] = $row['fullname'];
-                $_SESSION['username'] = $row['username'];
+          
                 $_SESSION['email'] = $row['email'];
-                $_SESSION['role'] = $row['role'];
                 return true;
             }
         }
@@ -91,3 +64,12 @@ class User {
     }
 }
 ?>
+
+           
+  
+  
+
+    
+
+
+    

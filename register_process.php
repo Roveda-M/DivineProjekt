@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     // Register the user
     if ($user->register($fullname,  $username, $email, $password)) {
-        header("Location: login.php"); // Redirect to login page
+        header("Location: login.php"); 
         exit;
     } else {
         echo "Error registering user!";

@@ -309,9 +309,9 @@ button:hover {
 /* Dropdown Content */
 .dropdown-content {
   position: absolute;
-  top: 100%; /* ngjitet direkt poshtë butonit */
+  top: 100%; /* ngjitet direkt poshte butonit */
   left: 0;
-  width: 100%; /* të njëjtën gjerësi si butoni */
+  width: 100%; /* te njejten gjeresi si butoni */
   background: #fff;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   border-radius: 8px;

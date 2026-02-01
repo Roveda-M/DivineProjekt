@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-// Kontrollo nëse përdoruesi është loguar
+// Kontrollo nese përdoruesi esht loguar
 if(!isset($_SESSION['user_id'])){
     header("Location: login.php");
     exit;
@@ -56,7 +56,7 @@ $products = $productObj->getAllProducts();
 
     <div class="product-container">
       <?php foreach ($products as $product): ?>
-      <div class="product-card" data-category="<?= htmlspecialchars($product['category']) ?>">
+      <div class="product-card" data-category="<?= strtolower(htmlspecialchars($product['category'])) ?>">
         <img src="<?= htmlspecialchars($product['image_path']) ?>" alt="<?= htmlspecialchars($product['name']) ?>" />
         <h2><?= htmlspecialchars($product['name']) ?></h2>
         <p>€<?= number_format($product['price'], 2) ?></p>
